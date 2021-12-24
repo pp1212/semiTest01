@@ -11,16 +11,11 @@ import com.sist.dao.CustomerDAO;
 import com.sist.vo.CustomerVO;
 
 public class Find_idAction implements SistAction {
-	
-	public CustomerDAO dao;
-	public Find_idAction() {
-		dao = new CustomerDAO();
-	}
 
 	@Override
 	public String proRequest(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		HttpSession session = request.getSession();
+
 		request.setCharacterEncoding("utf-8");
 		
 		return "find_id.jsp";

@@ -12,7 +12,7 @@ public class Find_pwdAction implements SistAction {
 	@Override
 	public String proRequest(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		HttpSession session = request.getSession();
+
 		request.setCharacterEncoding("utf-8");
 		
 		return "find_pwd.jsp";
