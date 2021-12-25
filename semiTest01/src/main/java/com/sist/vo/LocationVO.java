@@ -71,5 +71,15 @@ public class LocationVO {
 		Y_coord = y_coord;
 	}
 	
-	
+	public LocationVO(int x_coord, int y_coord) {
+		super();
+		X_coord = x_coord;
+		Y_coord = y_coord;
+	}
+	public LocationVO(String province, String district, String dong) {
+		super();
+		this.province = province;
+		this.district = district;
+		this.dong = dong;
+	}
 }
