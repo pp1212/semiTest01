@@ -47,7 +47,7 @@ public class SistController extends HttpServlet {
 			Properties prop = new Properties();
 			prop.load(fr);
 			//key목록을 set으로 반환, iterator가 필요
-			Iterator keyList = prop.keySet().iterator();
+			Iterator keyList = prop.keySet().iterator(); 
 			while(keyList.hasNext()) {
 				String key = (String)keyList.next();	//object로 반환이 되기때문에String으로 형변환이 필요
 				String clsName = prop.getProperty(key);
