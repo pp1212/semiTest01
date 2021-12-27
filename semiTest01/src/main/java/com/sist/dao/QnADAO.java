@@ -175,4 +175,59 @@ public class QnADAO {
 		}
 		return b;
 	}
+	
+	public ArrayList<QnAVO> listQnA_mypage(int pageNUM,/* String orderColum,*/ String searchColum, String keyword, String cust_id){
+		totalRecord = getTotalRecord(searchColum, keyword);
+		totalPage = (int)Math.ceil(totalRecord/(double)pageSIZE);
+		System.out.println("전체레코드 수 : "+totalRecord);
+		System.out.println("전체페이지 수 : "+totalPage);
+		
+		int start  = (pageNUM-1)* QnADAO.pageSIZE + 1;
+		int end = start + QnADAO.pageSIZE - 1; 
+		
+		System.out.println("start:"+start);
+		System.out.println("end:"+end);
+		
+		
+		ArrayList<QnAVO> list = new ArrayList<QnAVO>();
+		try {
+			Connection conn = ConnectionProvider.getConnection();
+			
+			String sql2 = "select * from QnA";
+			if(keyword != null) {
+				sql2 += " where " + searchColum + " like '%"+keyword+"%'";
+			}
+			
+			String sql = "select qna_no, qna_title, qna_date, qna_hits, cust_id from("
+					+ "select rownum n,qna_no, qna_title, qna_date, qna_hits, cust_id "
+					+ "from ("+sql2+"))"
+					+ "where n between ? and ? and cust_id=?";
+			System.out.println("sql: "+sql);
+			
+
+			PreparedStatement pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, start);
+			pstmt.setInt(2, end);
+			pstmt.setString(3, cust_id);			
+			ResultSet rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				list.add(new QnAVO(
+						rs.getInt(1), 		
+						rs.getString(2), 
+						rs.getDate(3),
+						rs.getInt(4), 	
+						rs.getString(5) 	
+						));				
+			}
+			ConnectionProvider.close(conn, pstmt, rs);
+			
+		}catch (Exception e) {
+			System.out.println("예외발생:"+e.getMessage());
+			e.printStackTrace();
+		}
+		return list;
+	}
+	
+	
 }

@@ -14,7 +14,6 @@
 			form.keyword.focus();
 			return false;
 			}
-		
 		form.submit();
 	}
 </script>
