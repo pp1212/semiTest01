@@ -12,7 +12,9 @@ public class InsertQnAAction implements SistAction {
 	public String proRequest(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		
 		return "insertQnA.jsp";
 	}
 
 } 
+
