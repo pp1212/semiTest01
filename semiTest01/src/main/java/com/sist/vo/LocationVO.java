@@ -29,6 +29,14 @@ public class LocationVO {
 		this.district = district;
 		this.dong = dong;
 	}
+	
+	
+
+	public LocationVO(int x_coord, int y_coord) {
+		super();
+		X_coord = x_coord;
+		Y_coord = y_coord;
+	}
 
 	public int getLocation_code() {
 		return location_code;
