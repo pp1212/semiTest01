@@ -14,5 +14,9 @@
 		비밀번호 : <input type="password" name="cust_pwd"><br>
 		<input type="submit" value="확인">
 	</form>
+	
+	<form action="showLoc.do" method="post">
+		<input type="submit" value="관심지역 관리">
+	</form>
 </body>
 </html>
