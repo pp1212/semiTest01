@@ -39,7 +39,7 @@
 		아이디 : <input type="text" name="cust_id"><br>
 		문의내용 : <br>
 		<textarea rows="10" cols="80" name="qna_content" placeholder="필수 사항입니다"></textarea><br>
-		<input type="submit" value="등록" onclick="checkContent()">
+		<input type="button" value="등록" onclick="checkContent()">
 		<input id="re_button" type="button" value="취소" onclick="checkReject()">
 		
 	</form>
