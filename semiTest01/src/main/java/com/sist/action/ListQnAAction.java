@@ -11,9 +11,9 @@ import javax.servlet.http.HttpSession;
 import com.sist.dao.QnADAO;
 import com.sist.vo.QnAVO;
 
-public class listQnAAction implements SistAction {
-	public QnADAO dao;
-	public listQnAAction() {
+public class ListQnAAction implements SistAction {
+	public QnADAO dao; 
+	public ListQnAAction() {
 		dao = new QnADAO();
 	}
 	
