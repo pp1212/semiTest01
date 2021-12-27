@@ -68,6 +68,7 @@ public class LocationDAO {
 		}
 		return list;
 	}
+	
 	public ArrayList<String> getDistrict(String province){
 		String sql = "select district"
 				+ " from location"
@@ -88,6 +89,7 @@ public class LocationDAO {
 		}
 		return list;
 	}
+	
 	public ArrayList<String> getDong(String district){
 		String sql = "select dong"
 				+ " from location"
