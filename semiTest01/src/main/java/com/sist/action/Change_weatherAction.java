@@ -35,7 +35,7 @@ public class Change_weatherAction implements SistAction {
 			int nx = (Integer)session.getAttribute("x_coord");
 			int ny = (Integer)session.getAttribute("y_coord");
 			String baseDate = "20211227";
-			String baseTime = "1100"; 
+			String baseTime = "0200"; 
 			String serviceKey = "1UlV037okXGyhYGOoV4oRwalkxHMesBlS74QzjZXoOS23BwW1Q62QOLfVllVd6Bm4w1EhYLz6YZFFMfVZstoJw%3D%3D";
 			String urlStr = "http://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getVilageFcst?" + "serviceKey=" + serviceKey + "&pageNo=1" + "&numOfRows=4000" + "&dataType=JSON" + "&base_date=" + baseDate + "&base_time=" + baseTime + "&nx=" + nx + "&ny=" + ny; 
 			
