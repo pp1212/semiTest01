@@ -12,9 +12,9 @@ import com.sist.dao.QnADAO;
 import com.sist.vo.QnAVO;
 
 public class ListQnA_mypageAction implements SistAction {
-
 	public QnADAO dao;
 	public ListQnA_mypageAction() {
+		
 		dao = new QnADAO();
 	}
 	
@@ -22,12 +22,10 @@ public class ListQnA_mypageAction implements SistAction {
 	public String proRequest(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
-		HttpSession session = request.getSession();
-	
+		System.out.println("마이페이지 액션 동작");
 		request.setCharacterEncoding("utf-8");
-
+	
 		String searchColum = request.getParameter("searchColum");
-		String cust_id = request.getParameter("cust_id");
 		System.out.println("검색컬럼:" + searchColum);
 		if(searchColum==null) {
 			searchColum = "qna_title";
@@ -37,15 +35,16 @@ public class ListQnA_mypageAction implements SistAction {
 		String keyword = request.getParameter("keyword");
 		System.out.println("검색어:"+keyword);
 		
-		
 		int pageNUM = 1;
 		if(request.getParameter("pageNUM") != null) {
 			pageNUM = Integer.parseInt(request.getParameter("pageNUM"));
 		}
 		System.out.println("pageNUM:"+pageNUM);
 		
-		ArrayList<QnAVO> list  = dao.listQnA_mypage(pageNUM,/*orderColum,*/searchColum, keyword, cust_id);
+		HttpSession session = request.getSession();
+		String cust_id = request.getParameter("cust_id");
 		
+		ArrayList<QnAVO> list  = dao.listQnA_mypage(pageNUM,searchColum, keyword, cust_id);
 		request.setAttribute("totalPage", QnADAO.totalPage);
 		request.setAttribute("list", list);
 		
@@ -57,5 +56,4 @@ public class ListQnA_mypageAction implements SistAction {
 		
 		return "listQnA_mypage.jsp";
 	}
-
 }

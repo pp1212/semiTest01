@@ -7,14 +7,16 @@
 <title>Insert title here</title>
 </head>
 <script type="text/javascript">
+//HttpSession session = ((HttpServletRequest)request).getSession();
+//session.getAttribute("now_id");
 	function checkContent(){
 		var form= document.insertForm;
-		if(form.qna_content.value == ""){
+		if(form.qna_content.value==""){
 			alert("필수사항을 입력해주세요!");
 			form.qna_content.focus();		
 			return false;
 			}
-		if(form.qna_title.value == ""){
+		if(form.qna_title.value==""){
 			alert("필수사항을 입력해주세요!");
 			form.qna_title.focus();	
 			return false;
@@ -24,11 +26,13 @@
 	
 	function checkReject(){
 		if(confirm("작성을 취소하시겠습니까?")==true){
-			document.insertForm.submit();
+			document.insertForm.reset();
+			location.href='http://localhost:8080/semiTest01/listQnA.do';
 		}else{
-			return;
+			return; 
 		}
 	}
+	
 </script>
 <body>
 	<h2>문의등록</h2>
@@ -36,7 +40,7 @@
 	<form name="insertForm" action="insertQnAOK.do" method="post">
 		<input type="hidden" name="no" value="${no}">
 		제목 : <input type="text" name="qna_title" placeholder="필수 사항입니다"><br>
-		아이디 : <input type="text" name="cust_id"><br>
+		아이디 :<input type="text" name="cust_id" value="${now_id}"> <br>
 		문의내용 : <br>
 		<textarea rows="10" cols="80" name="qna_content" placeholder="필수 사항입니다"></textarea><br>
 		<input type="button" value="등록" onclick="checkContent()">

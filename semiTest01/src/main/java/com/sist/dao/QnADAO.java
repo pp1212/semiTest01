@@ -117,8 +117,8 @@ public class QnADAO {
 			
 			String sql = "select qna_no, qna_title, qna_date, qna_hits, cust_id from("
 					+ "select rownum n,qna_no, qna_title, qna_date, qna_hits, cust_id "
-					+ "from ("+sql2+"))"
-					+ "where n between ? and ? order by qna_no";
+					+ "from ("+sql2+" order by qna_no))"
+					+ "where n between ? and ?";
 			System.out.println("sql: "+sql);
 			
 //			if(orderColum != null) {
@@ -175,6 +175,7 @@ public class QnADAO {
 		}
 		return b;
 	}
+
 	
 	public ArrayList<QnAVO> listQnA_mypage(int pageNUM,/* String orderColum,*/ String searchColum, String keyword, String cust_id){
 		totalRecord = getTotalRecord(searchColum, keyword);
@@ -193,22 +194,25 @@ public class QnADAO {
 		try {
 			Connection conn = ConnectionProvider.getConnection();
 			
-			String sql2 = "select * from QnA";
-			if(keyword != null) {
-				sql2 += " where " + searchColum + " like '%"+keyword+"%'";
-			}
-			
 			String sql = "select qna_no, qna_title, qna_date, qna_hits, cust_id from("
 					+ "select rownum n,qna_no, qna_title, qna_date, qna_hits, cust_id "
-					+ "from ("+sql2+"))"
-					+ "where n between ? and ? and cust_id=?";
-			System.out.println("sql: "+sql);
+					+ "from (select * from QnA where cust_id=?))"
+					+ "where n between ? and ? order by qna_no";
 			
-
+			if(keyword != null) {
+				sql = "select qna_no, qna_title, qna_date, qna_hits, cust_id from("
+						+ "select rownum n,qna_no, qna_title, qna_date, qna_hits, cust_id "
+						+ "from (select * from QnA where cust_id=? and " + searchColum + " like '%"+keyword+"%'))"
+						+ "where n between ? and ? order by qna_no";
+			}
+			
+			System.out.println("sql: "+sql);
+				
 			PreparedStatement pstmt = conn.prepareStatement(sql);
-			pstmt.setInt(1, start);
-			pstmt.setInt(2, end);
-			pstmt.setString(3, cust_id);			
+			pstmt.setString(1, cust_id);
+			pstmt.setInt(2, start);
+			pstmt.setInt(3, end);
+			
 			ResultSet rs = pstmt.executeQuery();
 			
 			while(rs.next()) {
@@ -229,5 +233,40 @@ public class QnADAO {
 		return list;
 	}
 	
+	public int updateQnA(QnAVO b) {
+		int re = -1;
+		String sql = "update QnA set cust_id=?, qna_title=?, qna_content=? where qna_no=? ";
+		try {
+						
+			Connection conn = ConnectionProvider.getConnection();
+			PreparedStatement pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, b.getCust_id());
+			pstmt.setString(2, b.getQna_title());
+			pstmt.setString(3, b.getQna_content());
+			pstmt.setInt(4, b.getQna_no());
+			re = pstmt.executeUpdate();
+			ConnectionProvider.close(conn, pstmt);
+			
+		}catch (Exception e) {
+			System.out.println("예외발생:"+e.getMessage());
+			e.printStackTrace();
+		}
+		return re;
+	}
+	
+	public int deleteQnA(int qna_no) {
+		int re = -1;
+		try {
+			Connection conn = ConnectionProvider.getConnection();
+			String sql = "delete QnA where qna_no=?";
+			PreparedStatement pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, qna_no);
+			re = pstmt.executeUpdate();
+			ConnectionProvider.close(conn, pstmt);
+		}catch (Exception e) {
+			System.out.println("예외발생:"+e.getMessage());
+		}
+		return re;
+	}
 	
 }
