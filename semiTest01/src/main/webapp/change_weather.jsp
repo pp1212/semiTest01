@@ -7,6 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	x좌표 : ${x_coord } y좌표 : ${y_coord }
+	${dataValue_tmp }
+	${dataValue_pop }
 </body>
 </html>

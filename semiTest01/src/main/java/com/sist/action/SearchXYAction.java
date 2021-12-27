@@ -31,7 +31,7 @@ public class SearchXYAction implements SistAction {
 		request.setAttribute("x_coord", x_coord);
 		request.setAttribute("y_coord", y_coord);
 		
-		return "searchXY.jsp";
+		return "change_weather.do";
 	}
 
 }

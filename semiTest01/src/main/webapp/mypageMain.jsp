@@ -15,8 +15,14 @@
 		<input type="submit" value="확인">
 	</form>
 	
+	<form action="listQnA_mypage.do" method="post">
+		<input type="hidden" name="cust_id" value="${now_id }"><br>
+		<input type="submit" value="나의게시물 관리">
+	</form>
+	
 	<form action="showLoc.do" method="post">
 		<input type="submit" value="관심지역 관리">
 	</form>
+	
 </body>
 </html>

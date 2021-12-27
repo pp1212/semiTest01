@@ -6,7 +6,7 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 
 public class ConnectionProvider {
-	public static Connection getConnection(){
+	public static Connection getConnection() {
 		Connection conn = null;
 		try {
 			String url = "jdbc:oracle:thin:@localhost:1521:XE";
@@ -22,29 +22,31 @@ public class ConnectionProvider {
 	
 	public static void close(Connection conn, Statement stmt) {
 		try {
-			if(stmt != null){
+			if(stmt != null) {
 				stmt.close();
 			}
-			if(conn != null){
+			if(conn != null) {
 				conn.close();
 			}
 		}catch (Exception e) {
-			// TODO: handle exception
+			
 		}
 	}
+	
 	public static void close(Connection conn, Statement stmt, ResultSet rs) {
 		try {
-			if(stmt != null){
-				stmt.close();
-			}
-			if(conn != null){
-				conn.close();
-			}
 			if(rs != null) {
 				rs.close();
 			}
+			if(stmt != null) {
+				stmt.close();
+			}
+			if(conn != null) {
+				conn.close();
+			}
 		}catch (Exception e) {
 			// TODO: handle exception
 		}
 	}
+	
 }

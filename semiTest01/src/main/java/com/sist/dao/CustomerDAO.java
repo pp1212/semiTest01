@@ -10,20 +10,23 @@ import com.sist.vo.CustomerVO;
 public class CustomerDAO {
 	
 	public int checkCustomer(String cust_id, String cust_pwd) {
-		int re = -1;
+		int result = -1;
 		String sql = "select count(*) from customer where cust_id=? and cust_pwd=?";
 		try {
 			Connection conn = ConnectionProvider.getConnection();
 			PreparedStatement pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, cust_id);
 			pstmt.setString(2, cust_pwd);
-			re = pstmt.executeUpdate();
-			ConnectionProvider.close(conn, pstmt);
+			ResultSet rs = pstmt.executeQuery();
+			if(rs.next()) {
+				result = rs.getInt(1);
+			}
+			ConnectionProvider.close(conn, pstmt, rs);
 		} catch (Exception e) {
 			System.out.println("예외발생:"+e.getMessage());
 		}
 		
-		return re;
+		return result;
 	}
 	
 	public int insertCustomer(CustomerVO customer_vo) {

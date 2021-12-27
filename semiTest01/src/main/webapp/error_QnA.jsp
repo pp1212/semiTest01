@@ -7,6 +7,11 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h3>${now_id }님 로그인 되었습니다.</h3>
+
+${msg_QnA}
+<hr>
+<a href="insertQnA.do">문의등록</a><br>
+<a href="listQnA.do">문의목록</a>
+
 </body>
 </html>

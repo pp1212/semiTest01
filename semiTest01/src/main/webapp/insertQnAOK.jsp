@@ -7,7 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-
-
+	<%
+		response.sendRedirect("listQnA.do");
+	%>
 </body>
 </html>
