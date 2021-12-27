@@ -7,6 +7,11 @@
 <title>Insert title here</title>
 </head>
 <body>
-	x좌표 : ${x_coord } y좌표 : ${y_coord }
+
+${msg_QnA}
+<hr>
+<a href="insertQnA.do">문의등록</a><br>
+<a href="listQnA.do">문의목록</a>
+
 </body>
 </html>

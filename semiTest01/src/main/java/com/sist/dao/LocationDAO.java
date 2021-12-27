@@ -61,7 +61,7 @@ public class LocationDAO {
 			}
 			ConnectionProvider.close(conn, stmt, rs);
 		}catch (Exception e) {
-			System.out.println("오류처리: "+e.getMessage());
+			System.out.println("예외발생: "+e.getMessage());
 		}
 		return list;
 	}
@@ -81,11 +81,10 @@ public class LocationDAO {
 			}
 			ConnectionProvider.close(conn, stmt, rs);
 		}catch (Exception e) {
-			System.out.println("오류처리: "+e.getMessage());
+			System.out.println("예외발생: "+e.getMessage());
 		}
 		return list;
 	}
-	
 	public ArrayList<String> getDistrict(String province){
 		String sql = "select district"
 				+ " from location"
@@ -102,11 +101,11 @@ public class LocationDAO {
 			}
 			ConnectionProvider.close(conn, stmt, rs);
 		}catch (Exception e) {
-			System.out.println("오류처리: "+e.getMessage());
+			System.out.println("예외발생: "+e.getMessage());
 		}
 		return list;
 	}
-	
+
 	public ArrayList<String> getDong(String district){
 		String sql = "select dong"
 				+ " from location"
@@ -123,7 +122,7 @@ public class LocationDAO {
 			}
 			ConnectionProvider.close(conn, stmt, rs);
 		}catch (Exception e) {
-			System.out.println("오류처리: "+e.getMessage());
+			System.out.println("예외발생: "+e.getMessage());
 		}
 		return list;
 	}

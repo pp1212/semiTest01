@@ -20,21 +20,17 @@ public class Change_weatherAction implements SistAction {
 	@Override
 	public String proRequest(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
 		
-			
 			HttpSession session = request.getSession();
-			request.setCharacterEncoding("utf-8");	//나중에 사용자가 동을 한글로 입력할거니까..?
 			
 			String dataValue_tmp = "";
 		    String dataValue_pop = "";
 		    
-			
 		try{
-			String nx = "92"; 
-			String ny = "131"; 
+			String nx = (String)request.getParameter("x_coord");
+			String ny = (String)request.getParameter("y_coord");
 			String baseDate = "20211227";
-			String baseTime = "1100"; 
+			String baseTime = "0200"; 
 			String serviceKey = "1UlV037okXGyhYGOoV4oRwalkxHMesBlS74QzjZXoOS23BwW1Q62QOLfVllVd6Bm4w1EhYLz6YZFFMfVZstoJw%3D%3D";
 			String urlStr = "http://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getVilageFcst?" + "serviceKey=" + serviceKey + "&pageNo=1" + "&numOfRows=4000" + "&dataType=JSON" + "&base_date=" + baseDate + "&base_time=" + baseTime + "&nx=" + nx + "&ny=" + ny; 
 			

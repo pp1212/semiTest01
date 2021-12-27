@@ -25,9 +25,9 @@ public class LoginOKAction implements SistAction {
 		String cust_id = request.getParameter("cust_id");
 		String cust_pwd = request.getParameter("cust_pwd");
 		
-		int re = dao.checkCustomer(cust_id, cust_pwd);
+		int result = dao.checkCustomer(cust_id, cust_pwd);
 		String viewPage = "";
-		if(re == 1) {
+		if(result == 1) {
 			session.setAttribute("now_id", cust_id);
 			viewPage = "header2.do";
 		}else {

@@ -21,8 +21,7 @@ import com.sist.action.SistAction;
  */
 @WebServlet("*.do")
 public class SistController extends HttpServlet {
-	private static final long serialVersionUID = 1L;
-    
+	private static final long serialVersionUID = 1L;    
 	HashMap<String, SistAction> map;
 	
 	
@@ -46,10 +45,12 @@ public class SistController extends HttpServlet {
 			FileReader fr = new FileReader(path + "/" + "sist.properties");
 			Properties prop = new Properties();
 			prop.load(fr);
+
 			//key목록을 set으로 반환, iterator가 필요
 			Iterator keyList = prop.keySet().iterator(); 
+
 			while(keyList.hasNext()) {
-				String key = (String)keyList.next();	//object로 반환이 되기때문에String으로 형변환이 필요
+				String key = (String)keyList.next();	//object로 반환이 되기 때문에 String으로 형변환이 필요
 				String clsName = prop.getProperty(key);
 				SistAction obj = (SistAction)Class.forName(clsName).newInstance();
 				map.put(key, obj);
@@ -94,3 +95,4 @@ public class SistController extends HttpServlet {
 	}
 
 }
+
