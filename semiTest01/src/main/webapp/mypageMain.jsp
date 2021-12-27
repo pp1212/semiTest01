@@ -10,7 +10,7 @@
 	<h2>MyPage</h2>
 	<hr>
 	<form action="update_cust.do" method="post">
-		아이디 : <input type="text" name="cust_id"><br>
+		아이디 : <input type="text" name="cust_id" value="${now_id }"><br>
 		비밀번호 : <input type="password" name="cust_pwd"><br>
 		<input type="submit" value="확인">
 	</form>
