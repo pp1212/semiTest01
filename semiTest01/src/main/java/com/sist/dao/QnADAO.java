@@ -117,8 +117,8 @@ public class QnADAO {
 			
 			String sql = "select qna_no, qna_title, qna_date, qna_hits, cust_id from("
 					+ "select rownum n,qna_no, qna_title, qna_date, qna_hits, cust_id "
-					+ "from ("+sql2+"))"
-					+ "where n between ? and ? order by qna_no";
+					+ "from ("+sql2+" order by qna_no))"
+					+ "where n between ? and ?";
 			System.out.println("sql: "+sql);
 			
 //			if(orderColum != null) {

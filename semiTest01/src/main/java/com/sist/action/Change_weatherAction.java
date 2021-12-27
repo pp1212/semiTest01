@@ -3,6 +3,8 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.URL;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -26,6 +28,10 @@ public class Change_weatherAction implements SistAction {
 			String dataValue_tmp = "";
 		    String dataValue_pop = "";
 		    
+		    Date now = new Date();
+		    SimpleDateFormat today = new SimpleDateFormat("yyyyMMdd");
+		    SimpleDateFormat today_h = new SimpleDateFormat("HH");
+		    
 		try{
 //			int nx = Integer.parseInt(request.getParameter("x_coord"));
 //			int ny = Integer.parseInt(request.getParameter("y_coord"));
@@ -34,7 +40,8 @@ public class Change_weatherAction implements SistAction {
 //			String ny = "127";
 			int nx = (Integer)session.getAttribute("x_coord");
 			int ny = (Integer)session.getAttribute("y_coord");
-			String baseDate = "20211227";
+
+			String baseDate = today.format(now);
 			String baseTime = "0200"; 
 			String serviceKey = "1UlV037okXGyhYGOoV4oRwalkxHMesBlS74QzjZXoOS23BwW1Q62QOLfVllVd6Bm4w1EhYLz6YZFFMfVZstoJw%3D%3D";
 			String urlStr = "http://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getVilageFcst?" + "serviceKey=" + serviceKey + "&pageNo=1" + "&numOfRows=4000" + "&dataType=JSON" + "&base_date=" + baseDate + "&base_time=" + baseTime + "&nx=" + nx + "&ny=" + ny; 
@@ -62,7 +69,6 @@ public class Change_weatherAction implements SistAction {
 			JSONObject WeatherData; 
 	        String date = "";
 	        String time = "";
-	        
 	        String info = "";
 	        String fdate = "";
 	        String ftime = "";
@@ -70,9 +76,7 @@ public class Change_weatherAction implements SistAction {
 			for(int i = 0 ; i < item.size(); i++) 
 			{ 
 				 WeatherData = (JSONObject) item.get(i);
-	                
-                date = WeatherData.get("baseDate").toString();
-                time = WeatherData.get("baseTime").toString();
+	             
                 dataValue_pop = WeatherData.get("fcstValue").toString();
                 dataValue_tmp = WeatherData.get("fcstValue").toString();
                 info = WeatherData.get("category").toString();
@@ -80,10 +84,9 @@ public class Change_weatherAction implements SistAction {
                 fdate = WeatherData.get("fcstDate").toString();
                
                 
-                if(fdate.equals("20211227") && ftime.equals("1200")) {
+                if(fdate.equals(today.format(now)) && ftime.equals(today_h.format(now)+"00")) {
                 	if(info.equals("POP")) {
                 		info = "강수확률 : ";
-                		dataValue_pop  = dataValue_pop+" %";
                     	System.out.print("배열의 "+i+"번째 요소 ==> "); 
                     	System.out.print(info);
                     	System.out.println(dataValue_pop);  
@@ -91,7 +94,6 @@ public class Change_weatherAction implements SistAction {
                 	}
                 	if(info.equals("TMP")){
                 		info = "기온 : ";
-                		dataValue_tmp = dataValue_tmp+"℃";
      	                System.out.print("배열의 "+i+"번째 요소 ==> "); 
      	                System.out.print(info);
      	                System.out.println(dataValue_tmp);
