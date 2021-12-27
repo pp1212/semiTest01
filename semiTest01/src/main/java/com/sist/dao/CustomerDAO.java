@@ -8,6 +8,24 @@ import com.sist.db.ConnectionProvider;
 import com.sist.vo.CustomerVO;
 
 public class CustomerDAO {
+	
+	public int checkCustomer(String cust_id, String cust_pwd) {
+		int re = -1;
+		String sql = "select count(*) from customer where cust_id=? and cust_pwd=?";
+		try {
+			Connection conn = ConnectionProvider.getConnection();
+			PreparedStatement pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, cust_id);
+			pstmt.setString(2, cust_pwd);
+			re = pstmt.executeUpdate();
+			ConnectionProvider.close(conn, pstmt);
+		} catch (Exception e) {
+			System.out.println("예외발생:"+e.getMessage());
+		}
+		
+		return re;
+	}
+	
 	public int insertCustomer(CustomerVO customer_vo) {
 		int re = -1;
 		String sql = "insert into customer(cust_id,cust_pwd,cust_name,gender_code,cust_phone,cust_email,cust_addr) "

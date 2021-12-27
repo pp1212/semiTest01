@@ -1,7 +1,7 @@
 package com.sist.test;
-
+  
 public class ClassDAO {
 	public void insert() {
-		System.out.println("µî·Ï ¿Ï·á");
+		System.out.println("ï¿½ï¿½ï¿½ ï¿½Ï·ï¿½");
 	}
 }
