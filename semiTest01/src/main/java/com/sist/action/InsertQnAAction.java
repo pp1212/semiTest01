@@ -16,4 +16,5 @@ public class InsertQnAAction implements SistAction {
 		return "insertQnA.jsp";
 	}
 
-}
+} 
+

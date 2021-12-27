@@ -2,27 +2,27 @@ package com.sist.vo;
 
 public class FashionVO {
 	private int fashion_no;	
-	private String top_type;	
-	private String bottoms_type;	
-	private String outer_type;	
-	private String etc_type;
+	private int top_no;	
+	private int bottoms_no;	
+	private int outer_no;	
+	private int etc_no;
 	
-	public FashionVO(int fashion_no, String top_type, String bottoms_type, String outer_type, String etc_type) {
+	public FashionVO(int fashion_no, int top_no, int bottoms_no, int outer_no, int etc_no) {
 		super();
 		this.fashion_no = fashion_no;
-		this.top_type = top_type;
-		this.bottoms_type = bottoms_type;
-		this.outer_type = outer_type;
-		this.etc_type = etc_type;
+		this.top_no = top_no;
+		this.bottoms_no = bottoms_no;
+		this.outer_no = outer_no;
+		this.etc_no = etc_no;
 	}
-	
+
 	//4개짜리
-	public FashionVO(String top_type, String bottoms_type, String outer_type, String etc_type) {
+	public FashionVO(int top_no, int bottoms_no, int outer_no, int etc_no) {
 		super();
-		this.top_type = top_type;
-		this.bottoms_type = bottoms_type;
-		this.outer_type = outer_type;
-		this.etc_type = etc_type;
+		this.top_no = top_no;
+		this.bottoms_no = bottoms_no;
+		this.outer_no = outer_no;
+		this.etc_no = etc_no;
 	}
 
 	public FashionVO() {
@@ -38,37 +38,36 @@ public class FashionVO {
 		this.fashion_no = fashion_no;
 	}
 
-	public String getTop_type() {
-		return top_type;
+	public int getTop_no() {
+		return top_no;
 	}
 
-	public void setTop_type(String top_type) {
-		this.top_type = top_type;
+	public void setTop_no(int top_no) {
+		this.top_no = top_no;
 	}
 
-	public String getBottoms_type() {
-		return bottoms_type;
+	public int getBottoms_no() {
+		return bottoms_no;
 	}
 
-	public void setBottoms_type(String bottoms_type) {
-		this.bottoms_type = bottoms_type;
+	public void setBottoms_no(int bottoms_no) {
+		this.bottoms_no = bottoms_no;
 	}
 
-	public String getOuter_type() {
-		return outer_type;
+	public int getOuter_no() {
+		return outer_no;
 	}
 
-	public void setOuter_type(String outer_type) {
-		this.outer_type = outer_type;
+	public void setOuter_no(int outer_no) {
+		this.outer_no = outer_no;
 	}
 
-	public String getEtc_type() {
-		return etc_type;
+	public int getEtc_no() {
+		return etc_no;
 	}
 
-	public void setEtc_type(String etc_type) {
-		this.etc_type = etc_type;
+	public void setEtc_no(int etc_no) {
+		this.etc_no = etc_no;
 	}
-
 	
 }
