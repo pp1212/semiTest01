@@ -9,7 +9,7 @@
 <body>
 	<div>
 		<img src="images/wathercloset_logo.jpg">
-		<a href="#">Help</a>
+		<a href="http://localhost:8080/semiTest01/listQnA.do">Help</a>
 		<a href="#">Mypage</a>
 		<a href="logout.do">Logout</a>
 	</div>

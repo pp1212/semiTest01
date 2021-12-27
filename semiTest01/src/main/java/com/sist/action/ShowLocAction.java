@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.sist.dao.LocationDAO;
 import com.sist.vo.LocationVO;
-public class showLocAction implements SistAction {
+public class ShowLocAction implements SistAction {
 	
 	@Override
 	public String proRequest(HttpServletRequest request, HttpServletResponse response)
