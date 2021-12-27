@@ -41,7 +41,7 @@ public class LocationDAO {
 				l = new LocationVO(rs.getInt(1), rs.getInt(2));
 			}
 			ConnectionProvider.close(conn, pstmt, rs);
-		} catch (Exception e) {
+		} catch (Exception e) { 
 			System.out.println("예외발생:"+e.getMessage());
 		}
 		return l;
