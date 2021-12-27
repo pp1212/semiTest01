@@ -9,7 +9,8 @@
 <body>
 	<div>
 		<img src="images/wathercloset_logo.jpg">
-		<a href="#">Help</a>
+
+		<a href="listQnA.do">Help</a>
 		<a href="mypageMain.jsp">Mypage</a>
 		<a href="logout.do">Logout</a>
 	</div>
