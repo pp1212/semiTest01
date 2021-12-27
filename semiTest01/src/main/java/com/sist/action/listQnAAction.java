@@ -72,7 +72,3 @@ public class listQnAAction implements SistAction {
 		return "listQnA.jsp";
 	}
 }
-
-
-
-

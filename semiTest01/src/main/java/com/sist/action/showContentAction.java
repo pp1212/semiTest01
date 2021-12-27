@@ -9,9 +9,9 @@ import javax.servlet.http.HttpServletResponse;
 import com.sist.dao.QnADAO;
 import com.sist.vo.QnAVO;
 
-public class ShowContentAction implements SistAction {
+public class showContentAction implements SistAction {
 	public QnADAO dao;
-	public ShowContentAction() {
+	public showContentAction() {
 		dao = new QnADAO();
 	}
 
@@ -26,8 +26,3 @@ public class ShowContentAction implements SistAction {
 	}
 
 }
-
-
-
-
-

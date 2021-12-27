@@ -126,4 +126,7 @@ public class LocationDAO {
 		}
 		return list;
 	}
+	
+	
+	
 }

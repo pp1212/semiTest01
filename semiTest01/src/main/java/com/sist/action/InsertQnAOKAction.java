@@ -54,13 +54,3 @@ public class InsertQnAOKAction implements SistAction {
 	}
 
 }
-
-
-
-
-
-
-
-
-
-

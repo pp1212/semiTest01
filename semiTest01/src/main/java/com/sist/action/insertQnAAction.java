@@ -6,7 +6,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class InsertQnAAction implements SistAction {
+public class insertQnAAction implements SistAction {
 
 	@Override
 	public String proRequest(HttpServletRequest request, HttpServletResponse response)
@@ -16,4 +16,3 @@ public class InsertQnAAction implements SistAction {
 	}
 
 }
-

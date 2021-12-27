@@ -7,12 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<div>
-		<img src="images/wathercloset_logo.jpg">
 
-		<a href="http://localhost:8080/semiTest01/listQnA.do">Help</a>
-		<a href="mypageMain.jsp">Mypage</a>
-		<a href="logout.do">Logout</a>
-	</div>
 </body>
 </html>

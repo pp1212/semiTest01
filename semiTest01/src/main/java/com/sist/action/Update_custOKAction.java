@@ -20,7 +20,6 @@ public class Update_custOKAction implements SistAction {
 	public String proRequest(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
-		System.out.println("Update_custOKAction 실행됨");
 		request.setCharacterEncoding("utf-8");
 		
 		CustomerVO c = new CustomerVO();

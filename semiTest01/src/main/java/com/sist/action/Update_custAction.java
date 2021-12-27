@@ -17,8 +17,6 @@ public class Update_custAction implements SistAction {
 		dao = new CustomerDAO();
 	}
 	
-	static String jsp = "";
-	
 	@Override
 	public String proRequest(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {

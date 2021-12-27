@@ -176,14 +176,3 @@ public class QnADAO {
 		return b;
 	}
 }
-
-	
-
-
-
-
-
-
-
-
-
