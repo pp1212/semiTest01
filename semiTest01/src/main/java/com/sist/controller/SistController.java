@@ -45,10 +45,12 @@ public class SistController extends HttpServlet {
 			FileReader fr = new FileReader(path + "/" + "sist.properties");
 			Properties prop = new Properties();
 			prop.load(fr);
-			//key紐⑸줉�쓣 set�쑝濡� 諛섑솚, iterator媛� �븘�슂
-			Iterator keyList = prop.keySet().iterator();
+
+			//key목록을 set으로 반환, iterator가 필요
+			Iterator keyList = prop.keySet().iterator(); 
+
 			while(keyList.hasNext()) {
-				String key = (String)keyList.next();	//object濡� 諛섑솚�씠 �릺湲곕븣臾몄뿉String�쑝濡� �삎蹂��솚�씠 �븘�슂
+				String key = (String)keyList.next();	//object로 반환이 되기 때문에 String으로 형변환이 필요
 				String clsName = prop.getProperty(key);
 				SistAction obj = (SistAction)Class.forName(clsName).newInstance();
 				map.put(key, obj);
@@ -85,7 +87,7 @@ public class SistController extends HttpServlet {
 			/day1222/listBoard.do
 		*/
 		String cmd = uri.substring(uri.lastIndexOf("/")+1);
-		SistAction action = map.get(cmd); //map.get(cmd) => key //new ListBoardAction()�쓽 媛앹껜
+		SistAction action = map.get(cmd); //map.get(cmd) => key //new ListBoardAction()의 객체
 		String viewPage = action.proRequest(request, response);//listBoard.jsp
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher(viewPage);
