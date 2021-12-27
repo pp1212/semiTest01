@@ -21,16 +21,21 @@ public class Change_weatherAction implements SistAction {
 	public String proRequest(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
-			HttpSession session = request.getSession();
+			HttpSession session = ((HttpServletRequest)request).getSession();
 			
 			String dataValue_tmp = "";
 		    String dataValue_pop = "";
 		    
 		try{
-			String nx = (String)request.getParameter("x_coord");
-			String ny = (String)request.getParameter("y_coord");
+//			int nx = Integer.parseInt(request.getParameter("x_coord"));
+//			int ny = Integer.parseInt(request.getParameter("y_coord"));
+			
+//			String nx = "60";
+//			String ny = "127";
+			int nx = (Integer)session.getAttribute("x_coord");
+			int ny = (Integer)session.getAttribute("y_coord");
 			String baseDate = "20211227";
-			String baseTime = "0200"; 
+			String baseTime = "1100"; 
 			String serviceKey = "1UlV037okXGyhYGOoV4oRwalkxHMesBlS74QzjZXoOS23BwW1Q62QOLfVllVd6Bm4w1EhYLz6YZFFMfVZstoJw%3D%3D";
 			String urlStr = "http://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getVilageFcst?" + "serviceKey=" + serviceKey + "&pageNo=1" + "&numOfRows=4000" + "&dataType=JSON" + "&base_date=" + baseDate + "&base_time=" + baseTime + "&nx=" + nx + "&ny=" + ny; 
 			
