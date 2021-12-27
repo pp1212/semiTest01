@@ -29,7 +29,7 @@ public class LoginOKAction implements SistAction {
 		String viewPage = "";
 		if(re == 1) {
 			session.setAttribute("now_id", cust_id);
-			viewPage = "loginOK.jsp";
+			viewPage = "header2.do";
 		}else {
 			viewPage = "error.jsp";
 			request.setAttribute("msg", "로그인에 실패하였습니다");

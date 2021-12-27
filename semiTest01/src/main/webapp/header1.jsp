@@ -7,6 +7,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h3>${now_id }님 로그인 되었습니다.</h3>
+	<div>
+		<img src="images/wathercloset_logo.jpg">
+		<a href="login.do">Login</a>
+	</div>
 </body>
 </html>
