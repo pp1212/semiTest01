@@ -40,6 +40,7 @@ public class Change_weatherAction implements SistAction {
 //			String ny = "127";
 			int nx = (Integer)session.getAttribute("x_coord");
 			int ny = (Integer)session.getAttribute("y_coord");
+
 			String baseDate = today.format(now);
 			String baseTime = "0200"; 
 			String serviceKey = "1UlV037okXGyhYGOoV4oRwalkxHMesBlS74QzjZXoOS23BwW1Q62QOLfVllVd6Bm4w1EhYLz6YZFFMfVZstoJw%3D%3D";
