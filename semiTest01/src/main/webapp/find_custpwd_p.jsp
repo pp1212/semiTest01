@@ -7,7 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-
-
+	고객님의 비밀번호는 ${cust_pwd_p} 입니다.
 </body>
 </html>

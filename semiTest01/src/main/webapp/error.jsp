@@ -7,9 +7,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-${msg }
-<hr>
-<a href="insertQnA.do">문의등록</a><br>
-<a href="listQnA.do">문의목록</a>
+
+	<h3>죄송합니다. 서비스 중에 다음과 같은 문제가 발생하였습니다.</h3>
+	${msg }
+
 </body>
 </html>

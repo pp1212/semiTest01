@@ -21,10 +21,10 @@ import com.sist.action.SistAction;
  */
 @WebServlet("*.do")
 public class SistController extends HttpServlet {
-	private static final long serialVersionUID = 1L;
-	
+	private static final long serialVersionUID = 1L;    
 	HashMap<String, SistAction> map;
-       
+	
+	
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -32,9 +32,9 @@ public class SistController extends HttpServlet {
         super();
         // TODO Auto-generated constructor stub
     }
+    
+    
 
-    
-    
 	@Override
 	public void init(ServletConfig config) throws ServletException {
 		// TODO Auto-generated method stub
@@ -42,17 +42,20 @@ public class SistController extends HttpServlet {
 		map = new HashMap<String, SistAction>();
 		try {
 			String path = config.getServletContext().getRealPath("WEB-INF");
-			FileReader fr = new FileReader(path + "/sist.properties");
+			FileReader fr = new FileReader(path + "/" + "sist.properties");
 			Properties prop = new Properties();
 			prop.load(fr);
+			//key紐⑸줉�쓣 set�쑝濡� 諛섑솚, iterator媛� �븘�슂
 			Iterator keyList = prop.keySet().iterator();
 			while(keyList.hasNext()) {
-				String key = (String)keyList.next();
+				String key = (String)keyList.next();	//object濡� 諛섑솚�씠 �릺湲곕븣臾몄뿉String�쑝濡� �삎蹂��솚�씠 �븘�슂
 				String clsName = prop.getProperty(key);
-				System.out.println("클래스이름 "+clsName);
 				SistAction obj = (SistAction)Class.forName(clsName).newInstance();
 				map.put(key, obj);
+				
+				
 			}
+			
 		}catch (Exception e) {
 			System.out.println("예외발생:"+e.getMessage());
 		}
@@ -75,30 +78,19 @@ public class SistController extends HttpServlet {
 		// TODO Auto-generated method stub
 		proRequest(request, response);
 	}
-
-	public void proRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+	
+	public void proRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String uri = request.getRequestURI();
-		System.out.println(uri);
 		/*
-		 	/day1222/listBoard.do
+			/day1222/listBoard.do
 		*/
+		String cmd = uri.substring(uri.lastIndexOf("/")+1);
+		SistAction action = map.get(cmd); //map.get(cmd) => key //new ListBoardAction()�쓽 媛앹껜
+		String viewPage = action.proRequest(request, response);//listBoard.jsp
 		
-		String cmd = uri.substring( uri.lastIndexOf("/") + 1 ); //insertBoard.do
-		System.out.println("trying to find cmd : "+cmd);
-		SistAction action = map.get(cmd);  //new InsertBoardAction()
-		String viewPage = action.proRequest(request, response);//insertBoard.jsp
-		
-		RequestDispatcher dispatcher 
-		= request.getRequestDispatcher(viewPage);
-		
+		RequestDispatcher dispatcher = request.getRequestDispatcher(viewPage);
 		dispatcher.forward(request, response);
 	}
+
 }
-
-
-
-
-
-
-
 

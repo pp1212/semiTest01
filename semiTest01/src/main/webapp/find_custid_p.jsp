@@ -7,7 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-
-
+	고객님의 아이디는 ${cust_id_p } 입니다.
 </body>
 </html>

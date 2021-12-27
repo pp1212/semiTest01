@@ -15,7 +15,7 @@ public class ConnectionProvider {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			conn = DriverManager.getConnection(url, user, password);
 		}catch (Exception e) {
-			System.out.println("오류처리:"+e.getMessage());
+			System.out.println("예외발생:"+e.getMessage());
 		}
 		return conn;
 	}
@@ -50,9 +50,3 @@ public class ConnectionProvider {
 	}
 	
 }
-
-
-
-
-
-

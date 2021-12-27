@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-
-
+	${dataValue_tmp }
+	${dataValue_pop }
 </body>
 </html>

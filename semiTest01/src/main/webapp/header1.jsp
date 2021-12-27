@@ -7,7 +7,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-
-
+	<div>
+		<img src="images/wathercloset_logo.jpg">
+		<a href="login.do">Login</a>
+	</div>
 </body>
 </html>

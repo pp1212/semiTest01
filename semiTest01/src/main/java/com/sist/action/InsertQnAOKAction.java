@@ -42,8 +42,8 @@ public class InsertQnAOKAction implements SistAction {
 		if(re == 1) {
 			viewPage = "insertQnAOK.jsp";
 		}else {
-			viewPage = "error.jsp";
-			request.setAttribute("msg", "게시물 등록에 실패하였습니다");
+			viewPage = "error_QnA.jsp";
+			request.setAttribute("msg_QnA", "문의등록에 실패하였습니다");
 		}
 		return viewPage;
 	}

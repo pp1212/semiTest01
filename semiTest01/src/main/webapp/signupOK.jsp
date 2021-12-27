@@ -7,7 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-
-
+	<h3>${cust_id }님 회원가입에 성공하였습니다</h3>
 </body>
 </html>

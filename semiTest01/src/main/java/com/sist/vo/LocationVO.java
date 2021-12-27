@@ -22,7 +22,6 @@ public class LocationVO {
 		X_coord = x_coord;
 		Y_coord = y_coord;
 	}
-
 	
 	public LocationVO(String province, String district, String dong) {
 		super();
@@ -80,4 +79,5 @@ public class LocationVO {
 	}
 	
 	
+
 }

@@ -8,6 +8,10 @@
 </head>
 <body>
 
+${msg_QnA}
+<hr>
+<a href="insertQnA.do">문의등록</a><br>
+<a href="listQnA.do">문의목록</a>
 
 </body>
 </html>
