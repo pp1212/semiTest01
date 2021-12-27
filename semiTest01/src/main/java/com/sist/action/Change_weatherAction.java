@@ -21,13 +21,20 @@ public class Change_weatherAction implements SistAction {
 	public String proRequest(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
+		
+			
 			HttpSession session = request.getSession();
 			request.setCharacterEncoding("utf-8");	//나중에 사용자가 동을 한글로 입력할거니까..?
+			
+			String dataValue_tmp = "";
+		    String dataValue_pop = "";
+		    
+			
 		try{
 			String nx = "92"; 
 			String ny = "131"; 
-			String baseDate = "20211226";
-			String baseTime = "1400"; 
+			String baseDate = "20211227";
+			String baseTime = "1100"; 
 			String serviceKey = "1UlV037okXGyhYGOoV4oRwalkxHMesBlS74QzjZXoOS23BwW1Q62QOLfVllVd6Bm4w1EhYLz6YZFFMfVZstoJw%3D%3D";
 			String urlStr = "http://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getVilageFcst?" + "serviceKey=" + serviceKey + "&pageNo=1" + "&numOfRows=4000" + "&dataType=JSON" + "&base_date=" + baseDate + "&base_time=" + baseTime + "&nx=" + nx + "&ny=" + ny; 
 			
@@ -54,8 +61,7 @@ public class Change_weatherAction implements SistAction {
 			JSONObject WeatherData; 
 	        String date = "";
 	        String time = "";
-	        String dataValue_tmp = "";
-	        String dataValue_pop = "";
+	        
 	        String info = "";
 	        String fdate = "";
 	        String ftime = "";
@@ -73,13 +79,14 @@ public class Change_weatherAction implements SistAction {
                 fdate = WeatherData.get("fcstDate").toString();
                
                 
-                if(fdate.equals("20211226") && ftime.equals("1700")) {
+                if(fdate.equals("20211227") && ftime.equals("1200")) {
                 	if(info.equals("POP")) {
                 		info = "강수확률 : ";
                 		dataValue_pop  = dataValue_pop+" %";
                     	System.out.print("배열의 "+i+"번째 요소 ==> "); 
                     	System.out.print(info);
                     	System.out.println(dataValue_pop);  
+                    	session.setAttribute("dataValue_pop",dataValue_pop);
                 	}
                 	if(info.equals("TMP")){
                 		info = "기온 : ";
@@ -87,14 +94,15 @@ public class Change_weatherAction implements SistAction {
      	                System.out.print("배열의 "+i+"번째 요소 ==> "); 
      	                System.out.print(info);
      	                System.out.println(dataValue_tmp);
+     	                session.setAttribute("dataValue_tmp",dataValue_tmp);
                 	}           	                	
                 }
 			}				
 			
-			session.setAttribute("dataValue_tmp",dataValue_tmp);	
-			session.setAttribute("dataValue_pop",dataValue_pop);
 			
-			bf.close(); 
+			
+			bf.close();
+			
 			
 		}catch(Exception e){ 
 			System.out.println(e.getMessage()); 
