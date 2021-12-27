@@ -10,25 +10,42 @@ import com.sist.db.ConnectionProvider;
 import com.sist.vo.LocationVO;
 
 public class LocationDAO {
-	
-	public LocationVO searchXY(String dong) {
-		LocationVO l = null;
-		String sql = "select x_coord,y_coord from location where dong like '%' || ? || '%'";
+	public ArrayList<LocationVO> searchAll(String dong) {
+		ArrayList<LocationVO> list = new ArrayList<LocationVO>();
+		String sql = "select province,district,dong from location where dong like '%' ||?|| '%'";
 		try {
 			Connection conn = ConnectionProvider.getConnection();
 			PreparedStatement pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, dong);
 			ResultSet rs = pstmt.executeQuery();
+			while(rs.next()) {
+				list.add(new LocationVO(rs.getString(1), rs.getString(2), rs.getString(3)));
+			}
+			ConnectionProvider.close(conn, pstmt, rs);
+		} catch (Exception e) {
+			System.out.println("예외발생:"+e.getMessage());
+		}
+		return list;
+	}
+	
+	public LocationVO searchXY(String district,String dong) {
+		LocationVO l = null;
+		String sql = "select x_coord,y_coord from location where district=? and dong=?";
+		try {
+			Connection conn = ConnectionProvider.getConnection();
+			PreparedStatement pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, district);
+			pstmt.setString(2, dong);
+			ResultSet rs = pstmt.executeQuery();
 			if(rs.next()) {
 				l = new LocationVO(rs.getInt(1), rs.getInt(2));
 			}
-			ConnectionProvider.close(conn, pstmt, rs);
-		}catch (Exception e) {
+		} catch (Exception e) {
 			System.out.println("예외발생:"+e.getMessage());
 		}
 		return l;
 	}
-
+	
 	public ArrayList<LocationVO> listAll(){
 		String sql = "select province, district, dong"
 				+ " from location"
@@ -68,6 +85,7 @@ public class LocationDAO {
 		}
 		return list;
 	}
+	
 	public ArrayList<String> getDistrict(String province){
 		String sql = "select district"
 				+ " from location"
@@ -88,6 +106,7 @@ public class LocationDAO {
 		}
 		return list;
 	}
+	
 	public ArrayList<String> getDong(String district){
 		String sql = "select dong"
 				+ " from location"

@@ -7,6 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h3>${now_id }님 로그인 되었습니다.</h3>
+	<h3>회원정보 수정에 성공하였습니다.</h3>
+	<hr>
 </body>
 </html>
+

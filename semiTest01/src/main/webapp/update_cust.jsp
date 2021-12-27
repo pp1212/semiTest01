@@ -19,12 +19,7 @@
 		var phone = document.loginForm.cust_phone.value;
 		var email = document.loginForm.cust_email.value;
 		var addr = document.loginForm.cust_addr.value;
-		var idDp = document.loginForm.idDuplication.value;
 		
-		if(idDp != "idCheck"){
-			alert("아이디 중복 검사를 해주세요");
-			return false;
-		}
 		if(!regExpPwd.test(pwd)){
 			alert("비밀번호는 영문, 숫자 조합 8자 이상 입력해 주세요");
 			document.loginForm.pwd.focus();
@@ -66,30 +61,19 @@
 	    }).open();
 	}
 	
-	function winopen(){
-		if(document.loginForm.cust_id.value == "" || document.loginForm.cust_id.value.length < 0){
-			alert("아이디를 먼저 입력해 주세요")
-			document.loginForm.cust_id.focus();
-		}else{
-			window.open("signupIdCheck.jsp?cust_id="+document.loginForm.cust_id.value,"","width=500, height=300");
-		}
-	}
- 
- function inputIdCheck(){
-	 document.loginForm.idDuplication.value = "idUncheck";
- }
+	
 </script>
 </head>
 <body>
-	<h2>회원 가입</h2>
-	<form action="signupOK.do" method="post" name="loginForm">
+	<h2>고객 정보 수정</h2>
+	<hr>
+	<form action="update_custOK.do" method="post" name="loginForm">
+		<input type="hidden" name="cust_id" value="${c.cust_id }"><br>
 		<table>
 			<tr>
-				<td id="title">아이디</td>
+				<td id="title">이름</td>
 				<td>
-					<input type="text" name="cust_id" onkeydown="inputIdCheck()"> 
-					<input type="button" value="아이디 중복 검사" onclick="winopen()">
-					<input type="hidden" name="idDuplication" value="idUncheck">
+					<input type="text" name="cust_name" value="${c.cust_name }">
 				</td>
 			</tr>
 			<tr>
@@ -104,29 +88,25 @@
 					<input type="password" name="cust_pwdCheck">
 				</td>
 			</tr>
-			<tr>
-				<td id="title">이름</td>
-				<td>
-					<input type="text" name="cust_name">
-				</td>
-			</tr>
+			
 			<tr>
 				<td id="title">성별</td>
 				<td>
 					<input type="radio" name="gender_code" value="1" checked="checked">남성	
 					<input type="radio" name="gender_code" value="2">여성
+					
 				</td>
 			</tr>
 			<tr>
 				<td id="title">휴대전화</td>
 				<td>
-					<input type="tel" name="cust_phone">
+					<input type="tel" name="cust_phone" value="${c.cust_phone }">
 				</td>
 			</tr>
 			<tr>
 				<td id="title">이메일</td>
 				<td>
-					<input type="email" name="cust_email" >
+					<input type="email" name="cust_email" value="${c.cust_email }">
 				</td>
 			</tr>
 			<tr>
@@ -139,12 +119,16 @@
 			<tr>
 				<td id="title">주소</td>
 				<td>
-					<input type="text" name="cust_addr" id="address" size="70" readonly="readonly">
+					<input type="text" name="cust_addr" id="address" size="70" readonly="readonly" value="${c.cust_addr }">
 				</td>
 			</tr>
 		</table>
 		<br>
-		<input type="button" value="회원가입" onclick="checkForm()">
+		<input type="button" value="수정" onclick="checkForm()">
+		<input type="reset" value="취소">
 	</form>
 </body>
 </html>
+
+
+
