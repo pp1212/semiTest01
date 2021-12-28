@@ -3,7 +3,7 @@ package com.sist.vo;
 public class LocationVO {
 	private	int	location_code;
 	private	String province;	
-	private	String district;	
+	private	String district;
 	private	String dong;	
 	private	int X_coord;	
 	private	int Y_coord;

@@ -128,6 +128,25 @@ public class LocationDAO {
 		return list;
 	}
 	
-	
+	public ArrayList<String> getDong2(String province, String district){
+		String sql = "select dong"
+				+ " from location"
+				+ " where province = '"+province+"' and district = '" + district + "'"
+				+ " group by dong"
+				+ " order by dong";
+		ArrayList<String> list = new ArrayList<String>();
+		try {
+			Connection conn = ConnectionProvider.getConnection();
+			Statement stmt = conn.createStatement();
+			ResultSet rs = stmt.executeQuery(sql);
+			while(rs.next()) {
+				list.add(rs.getString(1));
+			}
+			ConnectionProvider.close(conn, stmt, rs);
+		}catch (Exception e) {
+			System.out.println("예외발생: "+e.getMessage());
+		}
+		return list;
+	}
 	
 }
