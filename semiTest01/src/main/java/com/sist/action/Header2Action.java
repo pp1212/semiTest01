@@ -19,7 +19,7 @@ public class Header2Action implements SistAction {
 		String now_id = (String)session.getAttribute("now_id");
 		System.out.println("now_id:"+now_id);
 		
-		return "header2.jsp";
+		return "main.jsp";
 	}
 
 }
