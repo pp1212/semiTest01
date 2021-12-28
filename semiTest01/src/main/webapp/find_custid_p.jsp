@@ -9,10 +9,11 @@
 <body>
 	<jsp:include page="header1.jsp" />
 	<hr>
-	
-	고객님의 아이디는 ${cust_id_p } 입니다.
-	
-	<hr>
+	<br>
+	<br>
+	<h4>고객님의 아이디는 ${cust_id_p } 입니다.</h4>
+	<br>
+	<br>
 	<jsp:include page="footer.jsp"/>
 </body>
 </html>

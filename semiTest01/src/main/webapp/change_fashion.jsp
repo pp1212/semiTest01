@@ -13,7 +13,7 @@
 	}
 .div2{
 	width: 50%;
-	float: left;	
+	float: right;	
 	}
 #fashion_title{
 	margin-left: 100px;

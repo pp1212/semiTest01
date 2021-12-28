@@ -9,6 +9,7 @@
 #loc {
 	margin-top: 30px;
 	margin-left: 50px;	
+	float: left;
 	}
 	
 .main{
@@ -20,7 +21,6 @@
 	float: left;	
 	}
 #weather_title{
-	margin-left: 100px;
 	margin-bottom: 10px;
 	}
 #temp{
