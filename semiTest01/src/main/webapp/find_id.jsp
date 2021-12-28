@@ -5,17 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<style type="text/css">
-#box{
-	text-align: center;
-}
-#sub{
-	margin-top: 5px;
-	margin-bottom: 5px;
-	border-radius: 5px;
-	margin-left: 10px;
-}
-</style>
+<link rel="stylesheet" href="css/find_id.css" type="text/css">
 </head>
 <body>
 	
