@@ -12,7 +12,15 @@ public class SignupAction implements SistAction {
 	public String proRequest(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		String email="";
+		String gender="";
+		if(request.getParameter("email")!=null) {
+			email=request.getParameter("email");
+			gender=request.getParameter("gender");
+		}
 		
+		request.setAttribute("email", email);
+		request.setAttribute("gender", gender);
 		return "signup.jsp";
 	}
 
