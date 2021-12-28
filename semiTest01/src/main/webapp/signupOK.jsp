@@ -7,6 +7,17 @@
 <title>Insert title here</title>
 </head>
 <body>
+	<%
+		if(session.getAttribute("now_id") == null){
+			%>
+				<jsp:include page="header1.jsp" />
+			<%
+		}else{
+			%>
+				<jsp:include page="header2.jsp" />
+			<%
+		}
+	%>
 	<h3>${cust_id }님 회원가입에 성공하였습니다</h3>
 </body>
 </html>

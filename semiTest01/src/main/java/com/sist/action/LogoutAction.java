@@ -21,7 +21,7 @@ public class LogoutAction implements SistAction {
 		
 		
 		
-		return "header1.do";
+		return "main.jsp";
 	}
 
 }

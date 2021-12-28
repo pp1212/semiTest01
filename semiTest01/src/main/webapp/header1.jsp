@@ -8,7 +8,7 @@
 </head>
 <body>
 	<div>
-		<img src="images/wathercloset_logo.jpg">
+		<a href="main.jsp"><img src="images/wathercloset_logo.jpg" ></a>
 		<a href="login.do">Login</a>
 	</div>
 </body>
