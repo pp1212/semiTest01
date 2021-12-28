@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>    
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,11 +19,11 @@
 		form.submit();
 	}
 </script>
-<body>	
-	<form name="keywordForm" action="listQnA_mypage.do" method="post">
+<body>
+	<h2>나의 문의내역</h2>	
+	<form name="keywordForm" action="listQnA_mypage.do?cust_id=${now_id }" method="post">
 		<select name="searchColum">
 			<option name="q_title" value="qna_title">제목</option>
-			<option name="q_custid" value="cust_id">아이디</option>			
 		</select>
 	    <input type="search" name="keyword">
 		<input type="submit" value="검색" onclick="checkKeyword()">
@@ -43,7 +44,7 @@
 				<td>${b.qna_no }</td>
 				<td>
 					
-					<a href="showContent.do?qna_no=${b.qna_no }">${b.qna_title }</a>
+					<a href="showContent_mypage.do?qna_no=${b.qna_no }">${b.qna_title }</a>
 				</td>
 				<td>${b.cust_id }</td>
 				<td>${b.qna_date }</td>
@@ -56,6 +57,10 @@
 	<c:forEach var="i" begin="1" end="${totalPage }">
 		<a href="listQnA_mypage.do?pageNUM=${i }">${i }</a>&nbsp;&nbsp;
 	</c:forEach>
+	
 
+	
 </body>
 </html>
+
+

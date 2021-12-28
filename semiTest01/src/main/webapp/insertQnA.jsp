@@ -8,8 +8,10 @@
 </head>
 <script type="text/javascript">
 
+
 //HttpSession session = ((HttpServletRequest)request).getSession();
 //session.getAttribute("now_id");
+
 
 
 	function checkContent(){

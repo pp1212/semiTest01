@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -113,8 +114,16 @@
 			<tr>
 				<td id="title">성별</td>
 				<td>
-					<input type="radio" name="gender_code" value="1" checked="checked">남성	
-					<input type="radio" name="gender_code" value="2">여성
+				
+					<c:if test="${gender=='male' || gender==''}">
+						<input type="radio" name="gender_code" value="1" checked="checked">남성	
+						<input type="radio" name="gender_code" value="2">여성
+					</c:if>
+					<c:if test="${gender=='female'}">
+						<input type="radio" name="gender_code" value="1">남성	
+						<input type="radio" name="gender_code" value="2"  checked="checked">여성
+					</c:if>
+					
 				</td>
 			</tr>
 			<tr>
@@ -126,7 +135,7 @@
 			<tr>
 				<td id="title">이메일</td>
 				<td>
-					<input type="email" name="cust_email" >
+					<input type="email" name="cust_email" value="${email}">
 				</td>
 			</tr>
 			<tr>
