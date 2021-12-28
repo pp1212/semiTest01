@@ -5,26 +5,36 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+
+<link rel="stylesheet" href="css/main.css" type="text/css">
 </head>
 <body>
-	<%
-		if(session.getAttribute("now_id") == null){
-			%>
-				<jsp:include page="header1.jsp" />
+	<div id="wrap">
 			<%
-		}else{
+				if(session.getAttribute("now_id") == null){
+					%>
+						<jsp:include page="header1.jsp" />
+					<%
+				}else{
+					%>
+						<jsp:include page="header2.jsp" />
+					<%
+				}
 			%>
-				<jsp:include page="header2.jsp" />
-			<%
-		}
-	%>
-	
-	<jsp:include page="searchLocation.jsp"/>
-	<div>
-		<div>${dataValue_tmp }</div>
-		<div>${dataValue_pop }</div>
-		<div>${today_uv }</div>
+		<div id="main">
+		<img class="image-thumbnail">
+			<div id="locate">
+			<jsp:include page="searchLocation.jsp"/>
+			</div>
+			<div>
+				<div>${dataValue_tmp }</div>
+				<div>${dataValue_pop }</div>
+				<div>${today_uv }</div>
+			</div>
+		</div>
+		<div id="footer">
+		<jsp:include page="footer.jsp"/>
+		</div>
 	</div>
-	
 </body>
 </html>

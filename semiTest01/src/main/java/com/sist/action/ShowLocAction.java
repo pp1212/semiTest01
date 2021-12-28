@@ -6,6 +6,7 @@ import java.util.HashMap;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.sist.dao.CustomerDAO;
 import com.sist.dao.LocationDAO;
@@ -38,10 +39,12 @@ public class ShowLocAction implements SistAction {
 			}
 		}
 		
-		request.setAttribute("provinces", provinces);
-		request.setAttribute("districts", districts);
-		request.setAttribute("dongs", dongs);
-		
+		HttpSession session = request.getSession();
+		session.setAttribute("provinces", provinces);
+		session.setAttribute("districts", districts);
+		session.setAttribute("dongs", dongs);
+		ArrayList<String> list2 = dongs.get("서대문구");
+		System.out.println(list2);
 		
 		return "showLoc.jsp";
 	}

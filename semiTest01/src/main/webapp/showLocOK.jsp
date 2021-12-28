@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+	선택한 지역은 (        )입니다.
 </body>
 </html>
