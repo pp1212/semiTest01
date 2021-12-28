@@ -1,6 +1,7 @@
 package com.sist.action;
 
 import java.io.IOException;
+import java.util.HashMap;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -8,6 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.sist.dao.LocationDAO;
+import com.sist.util.Weather;
 import com.sist.vo.LocationVO;
 
 public class SearchXYAction implements SistAction {
@@ -30,26 +32,30 @@ public class SearchXYAction implements SistAction {
 		LocationVO l = dao.searchXY(district, dong);
 		int x_coord = l.getX_coord();
 		int y_coord = l.getY_coord();
+		int location_code = l.getLocation_code();
 		
 		
-		if(session.getAttribute("x_coord") != null && session.getAttribute("y_coord") != null) {
-			session.removeAttribute("x_coord");
-			session.removeAttribute("y_coord");
-			
-			
-//			request.setAttribute("x_coord", x_coord);
-//			request.setAttribute("y_coord", y_coord);
-			
-			session.setAttribute("x_coord", x_coord);
-			session.setAttribute("y_coord", y_coord);
-		}else {
-			session.setAttribute("x_coord", x_coord);
-			session.setAttribute("y_coord", y_coord);
-		}
+		session.setAttribute("x_coord", x_coord);
+		session.setAttribute("y_coord", y_coord);
+		session.setAttribute("location_code", location_code);
+		
+		System.out.println("searchXYaction 동작함=========================================================");
+		System.out.println("x_coord:"+x_coord);
+		System.out.println("y_coord:"+y_coord);
+		System.out.println("location_code:"+location_code);
+		
+		Weather w = new Weather();
+		HashMap<String, String> map = w.getInfo(x_coord, y_coord, location_code);
+		
+		session.setAttribute("map", map);
+		System.out.println("map:"+map);
 		
 		
+		session.setAttribute("dataValue_tmp", map.get("dataValue_tmp"));
+		session.setAttribute("dataValue_pop", map.get("dataValue_pop"));
+		session.setAttribute("today_uv", map.get("today_uv"));
 		
-		return "change_weather.do";
+		return "main.jsp";
 	}
 
 }

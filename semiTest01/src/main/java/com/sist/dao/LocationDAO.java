@@ -30,7 +30,7 @@ public class LocationDAO {
 	
 	public LocationVO searchXY(String district,String dong) {
 		LocationVO l = null;
-		String sql = "select x_coord,y_coord from location where district=? and dong=?";
+		String sql = "select x_coord,y_coord,location_code from location where district=? and dong=?";
 		try {
 			Connection conn = ConnectionProvider.getConnection();
 			PreparedStatement pstmt = conn.prepareStatement(sql);
@@ -38,7 +38,7 @@ public class LocationDAO {
 			pstmt.setString(2, dong);
 			ResultSet rs = pstmt.executeQuery();
 			if(rs.next()) {
-				l = new LocationVO(rs.getInt(1), rs.getInt(2));
+				l = new LocationVO(rs.getInt(1), rs.getInt(2), rs.getInt(3));
 			}
 			ConnectionProvider.close(conn, pstmt, rs);
 		} catch (Exception e) { 
