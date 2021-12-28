@@ -9,7 +9,7 @@
 </head>
 <body>
 	<div>
-		<img src="images/wathercloset_logo.jpg">
+		<a href="main.jsp"><img src="images/wathercloset_logo.jpg"></a>
 	<ul id="menu">
 		<li><a href="listQnA.do">Help</a></li>
 		<li><a href="mypageMain.jsp">Mypage</a></li>

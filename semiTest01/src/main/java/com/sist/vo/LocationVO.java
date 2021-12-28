@@ -32,11 +32,13 @@ public class LocationVO {
 	
 	
 
-	public LocationVO(int x_coord, int y_coord) {
+	public LocationVO(int x_coord, int y_coord,int location_code) {
 		super();
 		X_coord = x_coord;
 		Y_coord = y_coord;
+		this.location_code = location_code;
 	}
+	
 
 	public int getLocation_code() {
 		return location_code;
