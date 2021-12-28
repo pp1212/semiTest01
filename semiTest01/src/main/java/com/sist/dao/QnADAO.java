@@ -267,6 +267,7 @@ public class QnADAO {
 			System.out.println("예외발생:"+e.getMessage());
 		}
 		return re;
+		
 	}
 	
 }

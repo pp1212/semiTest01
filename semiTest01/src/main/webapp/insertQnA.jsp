@@ -7,8 +7,13 @@
 <title>Insert title here</title>
 </head>
 <script type="text/javascript">
+
+
 //HttpSession session = ((HttpServletRequest)request).getSession();
 //session.getAttribute("now_id");
+
+
+
 	function checkContent(){
 		var form= document.insertForm;
 		if(form.qna_content.value==""){

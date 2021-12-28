@@ -57,6 +57,7 @@
 	<c:forEach var="i" begin="1" end="${totalPage }">
 		<a href="listQnA_mypage.do?pageNUM=${i }">${i }</a>&nbsp;&nbsp;
 	</c:forEach>
+	
 
 	
 </body>

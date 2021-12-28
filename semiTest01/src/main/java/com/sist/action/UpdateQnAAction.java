@@ -24,6 +24,7 @@ public class UpdateQnAAction implements SistAction {
 		request.setAttribute("b", b);
 		return "updateQnA.jsp";
 		
+		
 	}
 
 }

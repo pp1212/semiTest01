@@ -28,6 +28,7 @@ public class ShowContent_mypageAction implements SistAction {
 		QnAVO b= dao.getQnA(qna_no);
 		request.setAttribute("b", b);
 		return "showContent_mypage.jsp";
+
 	}
 
 }

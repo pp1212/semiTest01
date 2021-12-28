@@ -20,6 +20,7 @@
 		<input type="submit" value="완료">
 		<input type="reset" value="취소">
 	</form>
+	
 		
 </body>
 </html>

@@ -31,6 +31,7 @@ public class DeleteQnAAction implements SistAction {
 		}
 		
 		return viewPage;
+		
 	}
 
 }

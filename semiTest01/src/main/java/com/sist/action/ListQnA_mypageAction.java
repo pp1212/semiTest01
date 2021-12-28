@@ -55,5 +55,6 @@ public class ListQnA_mypageAction implements SistAction {
 
 		
 		return "listQnA_mypage.jsp";
+		
 	}
 }

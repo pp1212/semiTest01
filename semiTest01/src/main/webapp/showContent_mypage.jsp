@@ -18,5 +18,6 @@
 	
 	<a href="listQnA_mypage.do?cust_id=${now_id }">목록</a>
 	<a href="updateQnA.do?qna_no=${b.qna_no }">수정</a>
+	
 </body>
 </html>

@@ -10,5 +10,6 @@
 	<h3>문의내역 삭제에 성공하였습니다.</h3>
 	<hr>
 	<a href="listQnA_mypage.do?cust_id=${now_id }">목록</a>
+	
 </body>
 </html>

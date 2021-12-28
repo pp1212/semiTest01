@@ -10,7 +10,7 @@ import com.sist.dao.QnADAO;
 import com.sist.vo.QnAVO;
 
 public class ShowContentAction implements SistAction {
-	
+
 	public QnADAO dao;
 	public ShowContentAction() {
 		dao = new QnADAO();
