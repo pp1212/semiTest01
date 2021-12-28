@@ -17,7 +17,7 @@ public class SearchXYAction implements SistAction {
 	public SearchXYAction() {
 		dao = new LocationDAO();
 	}
-	
+	  
 	@Override
 	public String proRequest(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -32,7 +32,7 @@ public class SearchXYAction implements SistAction {
 		LocationVO l = dao.searchXY(district, dong);
 		int x_coord = l.getX_coord();
 		int y_coord = l.getY_coord();
-		int location_code = l.getLocation_code();
+		String location_code = l.getLocation_code();
 		
 		
 		session.setAttribute("x_coord", x_coord);

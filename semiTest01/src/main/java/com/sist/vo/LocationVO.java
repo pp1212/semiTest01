@@ -1,50 +1,21 @@
 package com.sist.vo;
 
 public class LocationVO {
-	private	int	location_code;
+	private	String	location_code;
 	private	String province;	
 	private	String district;	
 	private	String dong;	
 	private	int X_coord;	
 	private	int Y_coord;
 	
-	public LocationVO() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-
-	public LocationVO(int location_code, String province, String district, String dong, int x_coord, int y_coord) {
-		super();
-		this.location_code = location_code;
-		this.province = province;
-		this.district = district;
-		this.dong = dong;
-		X_coord = x_coord;
-		Y_coord = y_coord;
-	}
-	
-	public LocationVO(String province, String district, String dong) {
-		super();
-		this.province = province;
-		this.district = district;
-		this.dong = dong;
-	}
+	  
 	
 	
-
-	public LocationVO(int x_coord, int y_coord,int location_code) {
-		super();
-		X_coord = x_coord;
-		Y_coord = y_coord;
-		this.location_code = location_code;
-	}
-	
-
-	public int getLocation_code() {
+	public String getLocation_code() {
 		return location_code;
 	}
 
-	public void setLocation_code(int location_code) {
+	public void setLocation_code(String location_code) {
 		this.location_code = location_code;
 	}
 
@@ -87,7 +58,36 @@ public class LocationVO {
 	public void setY_coord(int y_coord) {
 		Y_coord = y_coord;
 	}
-	
-	
 
+	public LocationVO() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public LocationVO(String location_code, String province, String district, String dong, int x_coord, int y_coord) {
+		super();
+		this.location_code = location_code;
+		this.province = province;
+		this.district = district;
+		this.dong = dong;
+		X_coord = x_coord;
+		Y_coord = y_coord;
+	}
+
+	public LocationVO(String province, String district, String dong) {
+		super();
+		this.province = province;
+		this.district = district;
+		this.dong = dong;
+	}
+
+	public LocationVO(int x_coord, int y_coord,String location_code) {
+		super();
+		
+		X_coord = x_coord;
+		Y_coord = y_coord;
+		this.location_code = location_code;
+	}
+	
+	
 }

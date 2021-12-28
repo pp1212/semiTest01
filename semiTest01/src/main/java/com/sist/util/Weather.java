@@ -13,7 +13,7 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
 public class Weather {
-	public HashMap<String, String> getInfo(int nx, int ny, int location_code){
+	public HashMap<String, String> getInfo(int nx, int ny, String location_code){
 		HashMap<String, String> map = new HashMap<String, String>();
 		String dataValue_tmp = "";
 	    String dataValue_pop = "";
@@ -44,7 +44,7 @@ public class Weather {
 		while((line=bf.readLine())!=null){ 
 			result=result.concat(line); 
 			System.out.println(result);
-		}
+		}  
 	
 		JSONParser parsar = new JSONParser();
         JSONObject obj = (JSONObject) parsar.parse(result);
@@ -105,7 +105,7 @@ public class Weather {
 		return map;
 	}
 	
-	public String getUV(int location_code) {
+	public String getUV(String location_code) {
 		String r = "";
 		Date now = new Date();
 	    SimpleDateFormat date = new SimpleDateFormat("yyyyMMdd");

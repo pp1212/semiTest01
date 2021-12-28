@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import com.sist.db.ConnectionProvider;
 import com.sist.vo.LocationVO;
 
-public class LocationDAO {
+public class LocationDAO {  
 	public ArrayList<LocationVO> searchAll(String dong) {
 		ArrayList<LocationVO> list = new ArrayList<LocationVO>();
 		String sql = "select province,district,dong from location where dong like '%' ||?|| '%'";
@@ -29,6 +29,9 @@ public class LocationDAO {
 	}
 	
 	public LocationVO searchXY(String district,String dong) {
+		System.out.println("구 :"+ district);
+		System.out.println("동 :"+ dong);
+		
 		LocationVO l = null;
 		String sql = "select x_coord,y_coord,location_code from location where district=? and dong=?";
 		try {
@@ -38,7 +41,9 @@ public class LocationDAO {
 			pstmt.setString(2, dong);
 			ResultSet rs = pstmt.executeQuery();
 			if(rs.next()) {
-				l = new LocationVO(rs.getInt(1), rs.getInt(2), rs.getInt(3));
+				System.out.println("OK");
+				l = new LocationVO(rs.getInt(1), rs.getInt(2), rs.getString(3));
+				System.out.println("검색된객체:"+l);
 			}
 			ConnectionProvider.close(conn, pstmt, rs);
 		} catch (Exception e) { 
