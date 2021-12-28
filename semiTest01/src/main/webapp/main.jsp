@@ -22,14 +22,12 @@
 				}
 			%>
 		<div id="main">
+		
 		<img class="image-thumbnail">
 			<div id="locate">
 			<jsp:include page="searchLocation.jsp"/>
-			</div>
-			<div>
-				<div>${dataValue_tmp }</div>
-				<div>${dataValue_pop }</div>
-				<div>${today_uv }</div>
+			<jsp:include page="change_weather.jsp"/>
+			<jsp:include page="change_fashion.jsp"/>
 			</div>
 		</div>
 		<div id="footer">

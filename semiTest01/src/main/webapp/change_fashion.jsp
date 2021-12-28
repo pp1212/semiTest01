@@ -59,15 +59,16 @@
 </head>
 <body>
 
+		<a href="change_fashion.do">날씨에맞는 옷 보기</a>
 		<div class="main">
 			<div>
 				<section class="div2">
 				<h4 id="fashion_title">- Fashion -</h4>
 					<div id="box2">
-						<div id="top">${top_type }</div>
-						<div id="bottom">${bottoms_type }</div>
-						<div id="outer">${outer_type }</div>
-						<div id="etc">${etc_type }</div>
+						<div id="top"><img src="images/${top_type }" width="250px" height="225px"></div>
+						<div id="bottom"><img src="images/${bottoms_type }" width="250px" height="225px"></div>
+						<div id="outer"><img src="images/${outer_type }" width="250px" height="225px"></div>
+						<div id="etc"><img src="images/${etc_type }" width="250px" height="225px"></div>
 					</div>
 				</section>
 			</div>

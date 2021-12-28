@@ -5,20 +5,37 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<style type="text/css">
+#box{
+	text-align: center;
+}
+</style>
 </head>
 <body>
-	<form action="find_idOK.do" method="post">
-		이름 : <input type="text" name="cust_name">
-		휴대폰번호 : <input type="text" name="cust_phone">
-		<input type="submit" value="전송">
-	</form>
+	
+	<jsp:include page="header1.jsp" />
 	<hr>
-	<form action="find_idOK.do" method="post">
-		이름 : <input type="text" name="cust_name">
-		이메일 : <input type="text" name="cust_email">
-		<input type="submit" value="전송">
-	</form>
-	<hr>
+	<div>
+		<form id="box" action="find_idOK.do" method="post">
+			<br>
+			이름<br>
+			<input type="text" name="cust_name" margin><br>
+			휴대폰번호<br>
+			<input type="text" name="cust_phone"><br>
+			<input type="submit" value="전송">
+		</form>
+		<br><br><br><br>
+		<form id="box"  action="find_idOK.do" method="post">
+			이름<br>
+			<input type="text" name="cust_name"><br>
+			이메일<br>
+			<input type="text" name="cust_email"><br>
+			<input type="submit" value="전송">
+		</form>
+		<br>
+	</div>
+	
+	<jsp:include page="footer.jsp"/>
 
 	 
 </body>
