@@ -1,11 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="css/signup.css" type="text/css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@300&display=swap" rel="stylesheet">
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <script type="text/javascript">
 	function checkForm() {
@@ -68,10 +71,14 @@
 	}
 	
 	function winopen(){
+		//새창을 열어서 페이지를 오픈 후 -> 회원아이디정보를 가지고 중복체크
+		//1. 아이디가 없으면 알림창과 진행x
 		if(document.loginForm.cust_id.value == "" || document.loginForm.cust_id.value.length < 0){
 			alert("아이디를 먼저 입력해 주세요")
 			document.loginForm.cust_id.focus();
 		}else{
+			//2. 회원정보아이디를 가지고 있는 지 체크하려면 DB에 접근해야한다.
+			//자바스크립트로 어떻게 DB에 접근할까? => 파라미터로 id값을 가져가서 jsp페이지에서 진행하면 된다.
 			window.open("signupIdCheck.jsp?cust_id="+document.loginForm.cust_id.value,"","width=500, height=300");
 		}
 	}
@@ -82,78 +89,78 @@
 </script>
 </head>
 <body>
-	<h2>회원 가입</h2>
+	<jsp:include page="header1.jsp"/>
+	
 	<form action="signupOK.do" method="post" name="loginForm">
-		<table>
-			<tr>
-				<td id="title">아이디</td>
-				<td>
-					<input type="text" name="cust_id" onkeydown="inputIdCheck()"> 
-					<input type="button" value="아이디 중복 검사" onclick="winopen()">
+		<div class="register-container">
+			
+			<div id="register-user">
+				<h2>회원 가입</h2>
+			</div>
+			
+			<div id="register-article">
+				<strong class="register-tf">아이디</strong>
+				<div class="register-subtitle">
+					<label for="user-id" class="register-lab"></label>
+					<input class="register-input" id="user-id" type="text" placeholder="아이디 입력" name="cust_id" onkeydown="inputIdCheck()">
+					<input type="button" value="아이디 중복 확인" onclick="winopen()">
 					<input type="hidden" name="idDuplication" value="idUncheck">
-				</td>
-			</tr>
-			<tr>
-				<td id="title">비밀번호</td>
-				<td>
-					<input type="password" name="cust_pwd"> *숫자,영문 조합 8자 이상
-				</td>
-			</tr>
-			<tr>
-				<td id="title">비밀번호 확인</td>
-				<td>
-					<input type="password" name="cust_pwdCheck">
-				</td>
-			</tr>
-			<tr>
-				<td id="title">이름</td>
-				<td>
-					<input type="text" name="cust_name">
-				</td>
-			</tr>
-			<tr>
-				<td id="title">성별</td>
-				<td>
-				
-					<c:if test="${gender=='male' || gender==''}">
-						<input type="radio" name="gender_code" value="1" checked="checked">남성	
-						<input type="radio" name="gender_code" value="2">여성
-					</c:if>
-					<c:if test="${gender=='female'}">
-						<input type="radio" name="gender_code" value="1">남성	
-						<input type="radio" name="gender_code" value="2"  checked="checked">여성
-					</c:if>
+				</div>
+					 
+				<strong class="register-tf">비밀번호</strong>
+				<div class="register-subtitle">
+					<label for="user-pwd" class="register-lab"></label>
+					<input class="register-input" id="user-pwd" type="password" placeholder="비밀번호 입력" name="cust_pwd"> *숫자,영문 조합 8자 이상<br>
+					<input class="register-input" type="password" placeholder="비밀번호 확인" name="cust_pwdCheck">
+					<div style="height: 15px;"></div>
+				</div>
 					
-				</td>
-			</tr>
-			<tr>
-				<td id="title">휴대전화</td>
-				<td>
-					<input type="tel" name="cust_phone">
-				</td>
-			</tr>
-			<tr>
-				<td id="title">이메일</td>
-				<td>
-					<input type="email" name="cust_email" value="${email}">
-				</td>
-			</tr>
-			<tr>
-	            <td id="title" width="200">우편번호</td>
-	            <td>
-	            	<input type="text" name="zipcode" id="zipcode" size="7" readonly="readonly"> 
-	                <input type="button" value="우편번호찾기" onclick="kakaopost()">
-	            </td>
-	        </tr>
-			<tr>
-				<td id="title">주소</td>
-				<td>
-					<input type="text" name="cust_addr" id="address" size="70" readonly="readonly">
-				</td>
-			</tr>
-		</table>
-		<br>
-		<input type="button" value="회원가입" onclick="checkForm()">
+				<strong class="register-tf">이름</strong>
+				<div class="register-subtitle">
+					<label for="user-name" class="register-lab"></label>
+					<input class="register-input" id="user-name" type="text" placeholder="이름 입력" name="cust_name">
+				</div>
+				
+				<strong class="register-tf">성별</strong>
+				<div class="register-subtitle" style="margin-top: 10px;">
+					<label for="user-male" class="register-lab">남
+						<input class="register-input gender" type="radio" id="user-male" name="gender_code" value="1" checked="checked"
+							style="width: 15px;height: 15px;">
+					</label>
+					<label for="user-female" class="register-lab">여
+						<input class="register-input gender" type="radio" id="user-female" name="gender_code" value="2"
+							style="width: 15px;height: 15px;">
+					</label>
+				</div>
+				
+				<strong class="register-tf">전화번호</strong>
+				<div class="register-subtitle">
+					<label for="user-tel" class="register-lab"></label>
+					<input class="register-input" type="tel" id="user-tel" placeholder="전화번호 입력" name="cust_phone">
+				</div>
+				
+				<strong class="register-tf">이메일</strong>
+				<div class="register-subtitle">
+					<label for="user-email" class="register-lab"></label>
+					<input class="register-input" type="email" id="user-email" placeholder="이메일 입력" name="cust_email" >
+				</div>
+				
+				<strong class="register-tf">주소</strong>
+				<div class="register-subtitle">
+					<label><input class="register-input addr1" placeholder="우편번호 입력" type="text" name="zipcode" id="zipcode" size="7" readonly="readonly" style="width: 200"> 
+	                		<input type="button" value="우편번호찾기" onclick="kakaopost()" style="width: 200">
+	                </label>
+					<label><input class="register-input addr2" placeholder="주소 입력" type="text" name="cust_addr" id="address" size="70" readonly="readonly">
+	                </label>
+				</div>
+				
+				<div class="register-submit">
+					<input id="submit_all" type="button" value="가입하기" onclick="checkForm()">
+				</div>
+			</div>
+		</div>
 	</form>
+	
+	<jsp:include page="footer.jsp"/>
 </body>
 </html>
