@@ -6,6 +6,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style type="text/css">
+/*
 #loc {
 	margin-top: 30px;
 	margin-left: 50px;	
@@ -44,12 +45,12 @@
 	margin-left: 100px;
 
 }
-
+*/
 </style>
 </head>
 <body>
 
-
+<%-- 
 	<h3 id="loc">[지역명]</h3> 
 		<div class="main">
 				<div>
@@ -63,12 +64,7 @@
 					</section>
 				</div>
 		</div>	
+ --%>
 
-
-
-
-	<%-- ${dataValue_tmp }
-	${dataValue_pop }
-	${today_uv } --%>
 </body>
 </html>

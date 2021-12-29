@@ -6,26 +6,32 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" href="css/find_id.css" type="text/css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@300&display=swap" rel="stylesheet">
 </head>
 <body>
 	
 	<jsp:include page="header1.jsp" />
 	<hr>
-	<div>
-	
-		<form id="box" action="find_idOK.do" method="post">
-		<h2>< 아이디 찾기 ></h2>
-		<h3>휴대폰번호로 찾기</h3>
-			이름&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="cust_name" id="sub" ><br>
-			휴대폰번호 <input type="text" name="cust_phone" id="sub"><br>
-			<input type="submit" value="전송" id="sub">
+	<div id="container">
+		<form  class="box" id="phone" action="find_idOK.do" method="post">
+		<h1>《 아이디 찾기 》</h1>
+		<h3>▷ 휴대폰번호로 찾기</h3>
+			<div>
+				이름&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input  class="text" type="text" name="cust_name" id="sub" ><br>
+				휴대폰번호 <input class="text" type="text" name="cust_phone" id="sub"><br>
+				<input type="submit" value="전송" id="sub1">
+			</div>
 		</form>
 		<br>
-		<form id="box"  action="find_idOK.do" method="post">
-			<h3>이메일로 찾기</h3>
-			이름&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="cust_name" id="sub"><br>
-			이메일 <input type="text" name="cust_email" id="sub"><br>
-			<input type="submit" value="전송" id="sub">
+		<form class="box" id="email" action="find_idOK.do" method="post">
+			<h3>▷ 이메일로 찾기</h3>
+			<div>
+				이름&nbsp;&nbsp;&nbsp;&nbsp;<input  class="text" type="text" name="cust_name" id="sub"><br>
+				이메일 <input class="text" type="text" name="cust_email" id="sub"><br>
+				<input  type="submit" value="전송" id="sub1">
+			</div>
 		</form>
 		<br>
 	</div>

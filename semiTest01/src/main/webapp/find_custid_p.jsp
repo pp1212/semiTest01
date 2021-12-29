@@ -5,6 +5,14 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap');
+H4{
+font-family: 'Do Hyeon', sans-serif;
+font-size: 40px;
+margin-left: 20px;
+}
+</style>
 </head>
 <body>
 	<jsp:include page="header1.jsp" />
