@@ -5,15 +5,23 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="css/insertQnA.css" type="text/css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@300&display=swap" rel="stylesheet">
 </head>
+			<%
+				if(session.getAttribute("now_id") == null){
+					%>
+						<jsp:include page="header1.jsp" />
+					<%
+				}else{
+					%>
+						<jsp:include page="header2.jsp" />
+					<%
+				}
+			%>
 <script type="text/javascript">
-
-
-//HttpSession session = ((HttpServletRequest)request).getSession();
-//session.getAttribute("now_id");
-
-
-
 	function checkContent(){
 		var form= document.insertForm;
 		if(form.qna_content.value==""){
@@ -40,7 +48,8 @@
 	
 </script>
 <body>
-	<h2>문의등록</h2>
+<div id="QnAinsert">
+	&nbsp;<h2>문의등록</h2>
 	<hr>
 	<form name="insertForm" action="insertQnAOK.do" method="post">
 		<input type="hidden" name="no" value="${no}">
@@ -50,7 +59,7 @@
 		<textarea rows="10" cols="80" name="qna_content" placeholder="필수 사항입니다"></textarea><br>
 		<input type="button" value="등록" onclick="checkContent()">
 		<input id="re_button" type="button" value="취소" onclick="checkReject()">
-		
+</div>	
 	</form>
 </body>
 </html>

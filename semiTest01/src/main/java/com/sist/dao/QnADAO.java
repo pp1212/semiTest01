@@ -93,7 +93,7 @@ public class QnADAO {
 		return re;
 	}
 	
-	public ArrayList<QnAVO> listQnA(int pageNUM,/* String orderColum,*/ String searchColum, String keyword){
+	public ArrayList<QnAVO> listQnA(int pageNUM, String searchColum, String keyword){
 		totalRecord = getTotalRecord(searchColum, keyword);
 		totalPage = (int)Math.ceil(totalRecord/(double)pageSIZE);
 		System.out.println("전체레코드 수 : "+totalRecord);
@@ -121,12 +121,6 @@ public class QnADAO {
 					+ "where n between ? and ?";
 			System.out.println("sql: "+sql);
 			
-//			if(orderColum != null) {
-//				sql = "select qna_no, qna_title, qna_date, qna_hits, qna_content, cust_id from( "
-//						+ "select rownum n, qna_no, qna_title, qna_date, qna_hits, qna_content, cust_id "
-//						+ "from ("+sql2+" order by "+orderColum+")) "
-//						+ "where n between ? and ?";
-//			}
 			PreparedStatement pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, start);
 			pstmt.setInt(2, end);
