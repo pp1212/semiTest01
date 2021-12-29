@@ -6,6 +6,14 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@300&display=swap" rel="stylesheet">
+<style type="text/css">
+*{
+	font-family: 'IBM Plex Sans KR', sans-serif;
+}
+</style>
 </head>
 <body>
 	<h2>아이디중복체크</h2>
@@ -22,7 +30,7 @@
 	}else{
 		out.print("사용가능한 아이디입니다");
 		%>
-		 <input type="button" value="아이디 사용하기" onclick="result();">
+		 <input type="button" value="아이디 사용하기" onclick="result()" style="margin-top: 2px;">
 		<%
 	}
 	
