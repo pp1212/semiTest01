@@ -96,3 +96,94 @@ input.menu_button1:hover{
 input.menu_button3:hover{
 	background-color: white;
 }
+
+.register-submit {
+    text-align: left;
+}
+
+#submit_all1 {
+    width: 15%;
+    height: 35px;
+    font-size: 1.0em;
+    cursor: pointer;
+    background-color: #aaaaaa;
+    border: none;
+    font-weight: bold;
+    padding: 6px 30px 6px 30px;
+    border-radius: 10px;
+    color: white;
+    margin: 0px;
+}
+
+#submit_all2 {
+    width: 15%;
+    height: 35px;
+    font-size: 1.0em;
+    cursor: pointer;
+    background-color: #aaaaaa;
+    border: none;
+    font-weight: bold;
+    padding: 6px 30px 6px 30px;
+    border-radius: 10px;
+    color: white;
+    margin-left: 380px;  
+}
+
+#submit_all3 {
+    width: 12%;
+    height: 35px;
+    font-size: 1.0em;
+    cursor: pointer;
+    background-color: #aaaaaa;
+    border: none;
+    font-weight: bold;
+    padding: 6px 30px 6px 30px;
+    border-radius: 10px;
+    color: white;
+    margin-left: 270px;   
+}
+#submit_all4 {
+    width: 12%;
+    height: 35px;
+    font-size: 1.0em;
+    cursor: pointer;
+    background-color: #aaaaaa;
+    border: none;
+    font-weight: bold;
+    padding: 6px 30px 6px 30px;
+    border-radius: 10px;
+    color: white;
+    margin: 0px 0px 0px;  
+}
+
+.menu_mypage {
+    text-align: center;
+}
+
+#my_menu1 {
+    width: 80%;
+    height: 50px;
+    font-size: 1.0em;
+    cursor: pointer;
+    background-color: white;
+    border: none;
+    font-weight: bold;
+    padding: 6px;
+    border-radius: 10px;
+    color: skyblue;
+}
+
+#my_menu {
+    width: 80%;
+    height: 50px;
+    font-size: 1.0em;
+    cursor: pointer;
+    background-color: skyblue;
+    border: none;
+    font-weight: bold;
+    padding: 6px;
+    border-radius: 10px;
+    color: white;
+}
+
+
