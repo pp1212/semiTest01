@@ -1,5 +1,5 @@
 @charset "UTF-8";
-div{
+div.mypage{
 	width: 1000px;
     height: 500px;
 }
@@ -11,7 +11,7 @@ div.menu_mypage{
 }
 
 div.login_mypage{
-	width: 50%;
+	width: 80%;
 	float: right;
 	box-sizing: border-box;
 }
@@ -83,17 +83,3 @@ input.menu_button2:hover{
 input.menu_button3:hover{
 	background-color: white;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-

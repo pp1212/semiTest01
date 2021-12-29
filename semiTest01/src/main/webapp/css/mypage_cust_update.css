@@ -1,6 +1,6 @@
-div{
+div.mypage{
 	width: 1000px;
-    height: 1000px;
+    height: 500px;
 }
 
 div.menu_mypage{
@@ -82,4 +82,22 @@ input.menu_button3:hover{
 #note{
 	padding-top: 100px;
 	text-align: center;
+}
+
+
+.register-submit {
+    text-align: center;
+}
+
+#submit_all {
+    width: 15%;
+    height: 35px;
+    font-size: 1.0em;
+    cursor: pointer;
+    background-color: #aaaaaa;
+    border: none;
+    font-weight: bold;
+    padding: 6px;
+    border-radius: 10px;
+    color: white;
 }

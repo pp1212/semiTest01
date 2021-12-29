@@ -16,23 +16,28 @@
 }
 #p3{ 
 	font-family: 'IBM Plex Sans KR', sans-serif;
-	font-size: 25px;
+	font-size: 22px;
+	margin-bottom: 20px;
+}
+.footer{
+	margin-left: 30px;
 }
 </style>
 </head>
 <body>
-
-	<footer>
+	<br>
+	<br>
+	<br>
 	<hr>
+	<footer class="footer">	
 		<strong><p id="p3"><b>고객센터</b></p></strong>
-		<br>
 		<p id="p2">고객센터 Tel.02-123-4567</p>
 		<p id="p2">Company Address</p>
 		<p id="p2">서울특별시 마포구 서교동 447-5</p>
 		<p id="p2">대표: 홍길동</p>
 	</footer>
 	<hr>
-	<i><small><p id="inc">㈜ 2021 WeaterCloset, Inc. All rights reserved</p></small></i>
+	<i><small><p style="margin-left: 30px;" id="inc">㈜ 2021 WeaterCloset, Inc. All rights reserved</p></small></i>
 
 	
 </body>

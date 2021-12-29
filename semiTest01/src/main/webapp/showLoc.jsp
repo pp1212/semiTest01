@@ -60,9 +60,22 @@
 </script>
 </head>
 <body>
+
+	<%
+		if(session.getAttribute("now_id") == null){
+			%>
+				<jsp:include page="header1.jsp" />
+			<%
+		}else{
+			%>
+				<jsp:include page="header2.jsp" />
+			<%
+		}
+	%>
+	
 	<h2>MyPage</h2>
 	<hr>
-	<div>
+	<div class="mypage">
 		<div class="menu_mypage">
 			<form action="mypageMain.jsp" method="post">
 				<input type="hidden" name="cust_id" value="${now_id }">
@@ -78,7 +91,9 @@
 		</div>
 		
 		<div class="loc_mypage">
-			<form id="loc" name="showLocForm" method="POST" action="showLocOK.do">      
+			<form id="loc2" name="showLocForm" method="POST" action="showLocOK.do">      
+				<h3 style="margin-right:0px;">관심지역 관리</h3>
+				<hr>
 		        <select name="province" id="province">
 		        </select>
 		        <select name="district" id="district"> 
@@ -89,6 +104,10 @@
 		    </form>
 		</div>    
 	</div>
+	
+	<div id="footer">
+		<jsp:include page="footer.jsp"/>
+	</div>
+	
 </body>
 </html>
-
