@@ -8,9 +8,22 @@
 <link rel="stylesheet" href="css/mypage_qna.css" type="text/css">
 </head>
 <body>
+
+	<%
+		if(session.getAttribute("now_id") == null){
+			%>
+				<jsp:include page="header1.jsp" />
+			<%
+		}else{
+			%>
+				<jsp:include page="header2.jsp" />
+			<%
+		}
+	%>
+	
 	<h2>MyPage</h2>
 	<hr>
-	<div>
+	<div class="mypage">
 		<div class="menu_mypage">
 			<form action="mypageMain.jsp" method="post">
 				<input type="hidden" name="cust_id" value="${now_id }">
@@ -24,9 +37,9 @@
 				<input class="menu_button3" type="submit" value="관심지역 관리">
 			</form>
 		</div>
-		
+			
 		<div class="show_mypage">
-			<h3>나의 문의내용</h3>
+			<h3 style="margin-right:0px;">나의 문의내용</h3>
 			<hr>
 			제목 : ${b.qna_title }<br>
 			아이디 : ${b.cust_id }<br>
@@ -39,5 +52,9 @@
 			<a href="updateQnA.do?qna_no=${b.qna_no }">수정</a>
 		</div>
 	</div>	
+	
+	<div id="footer">
+		<jsp:include page="footer.jsp"/>
+	</div>
 </body>
 </html>

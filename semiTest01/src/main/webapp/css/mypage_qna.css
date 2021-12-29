@@ -1,9 +1,8 @@
 @charset "UTF-8";
-div{
+div.mypage{
 	width: 1000px;
     height: 500px;
 }
-
 div.menu_mypage{
 	width: 20%;
     float: left;
@@ -97,3 +96,5 @@ input.menu_button1:hover{
 input.menu_button3:hover{
 	background-color: white;
 }
+
+

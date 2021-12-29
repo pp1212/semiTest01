@@ -34,9 +34,21 @@ function checkReject(){
 
 </script>
 <body>
+
+	<%
+		if(session.getAttribute("now_id") == null){
+			%>
+				<jsp:include page="header1.jsp" />
+			<%
+		}else{
+			%>
+				<jsp:include page="header2.jsp" />
+			<%
+		}
+	%>
 	<h2>MyPage</h2>
 	<hr>
-	<div>
+	<div class="mypage">
 		<div class="menu_mypage">
 			<form action="mypageMain.jsp" method="post">
 				<input type="hidden" name="cust_id" value="${now_id }">
@@ -52,7 +64,7 @@ function checkReject(){
 		</div>
 		
 		<div class="update_mypage">
-			<h3>나의 문의내용 수정</h3>
+			<h3 style="margin-right:0px;">나의 문의내용 수정</h3>
 			<hr>
 			<form name="updateForm" action="updateQnAOK.do" method="post">
 				<input type="hidden" name="qna_no" value="${b.qna_no }">
@@ -66,6 +78,10 @@ function checkReject(){
 				<input id="re_button" type="button" value="취소" onclick="checkReject()">
 			</form>
 		</div>
+	</div>
+	
+	<div id="footer">
+		<jsp:include page="footer.jsp"/>
 	</div>
 </body>
 </html>

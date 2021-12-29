@@ -21,9 +21,20 @@
 	}
 </script>
 <body>
+	<%
+		if(session.getAttribute("now_id") == null){
+			%>
+				<jsp:include page="header1.jsp" />
+			<%
+		}else{
+			%>
+				<jsp:include page="header2.jsp" />
+			<%
+		}
+	%>
 	<h2>MyPage</h2>
 	<hr>
-	<div>
+	<div class="mypage">
 		<div class="menu_mypage">
 			<form action="mypageMain.jsp" method="post">
 				<input type="hidden" name="cust_id" value="${now_id }">
@@ -40,9 +51,10 @@
 	
 	
 		<div class="listQnA_mypage">
-			<form id="search" name="keywordForm" action="listQnA_mypage.do?cust_id=${now_id }" method="post">
-				<h3>나의 문의내역</h3>
+			<h3 style="margin-right:0px;">나의 문의내역</h3>
 				<hr>
+			<form id="search" name="keywordForm" action="listQnA_mypage.do?cust_id=${now_id }" method="post">
+				
 				<select name="searchColum">
 					<option name="q_title" value="qna_title">제목</option>
 				</select>
@@ -81,6 +93,10 @@
 				<a href="listQnA_mypage.do?pageNUM=${i }">${i }</a>&nbsp;&nbsp;
 			</c:forEach>
 		</div>
+	</div>
+	
+	<div id="footer">
+		<jsp:include page="footer.jsp"/>
 	</div>
 </body>
 </html>

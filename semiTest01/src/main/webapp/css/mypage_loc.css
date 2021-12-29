@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 @charset "UTF-8";
-div{
+div.mypage{
 	width: 1000px;
     height: 500px;
 }
@@ -23,9 +23,8 @@ div.loc_mypage{
 	text-align: left;
 }
 
-#loc{
-	padding-top: 30px;
-	padding-left: 20px;
+#loc2{
+	padding-top: 10px;
 	text-align: left;
 }
 

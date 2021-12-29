@@ -67,9 +67,21 @@
 </script>
 </head>
 <body>
+	<%
+		if(session.getAttribute("now_id") == null){
+			%>
+				<jsp:include page="header1.jsp" />
+			<%
+		}else{
+			%>
+				<jsp:include page="header2.jsp" />
+			<%
+		}
+	%>
+	
 	<h2>MyPage</h2>
 	<hr>
-	<div>
+	<div class="mypage">
 		<div class="menu_mypage">
 			<form action="mypageMain.jsp" method="post">
 				<input type="hidden" name="cust_id" value="${now_id }">
@@ -86,7 +98,7 @@
 		
 		<div class="login_mypage">
 			<form id="login" action="update_custOK.do" method="post" name="loginForm">
-				<h3>회원 정보 수정</h3>
+				<h3 style="margin-right:0px;">회원 정보 수정</h3>
 				<hr>
 				<input type="hidden" name="cust_id" value="${c.cust_id }"><br>
 				<table>
@@ -144,11 +156,19 @@
 					</tr>
 				</table>
 				<br>
-				<input type="button" value="수정" onclick="checkForm()">
-				<input type="reset" value="취소">
+				<br>
+				<div class="register-submit">
+					<input id="submit_all" type="button" value="수정" onclick="checkForm()">
+					<input id="submit_all" type="reset" value="취소">
+				</div>
 			</form>
 		</div>
 	</div>
+	
+	<div id="footer">
+		<jsp:include page="footer.jsp"/>
+	</div>
+	
 	
 </body>
 </html>
