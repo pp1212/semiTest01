@@ -12,14 +12,10 @@
 <style type="text/css">
 a{
 	font-family: 'IBM Plex Sans KR', sans-serif;
-<<<<<<< HEAD
-	font-size: 20px;
 }
 
 #menu li a{
 	text-decoration:none; 
-=======
->>>>>>> branch 'master' of https://github.com/envayu/semiTest01.git
 }
 </style>
 </head>
