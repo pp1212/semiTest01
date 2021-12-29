@@ -6,25 +6,30 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" href="css/main.css" type="text/css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@300&display=swap" rel="stylesheet">
 <style type="text/css">
-/* #line{
-	margin-top: 100px;
+#p2{
+	font-family: 'IBM Plex Sans KR', sans-serif;
+	font-size: 15px;
 }
-#inc{
-	margin-left: 50px;
-} */
+#p3{
+	font-family: 'IBM Plex Sans KR', sans-serif;
+	font-size: 25px;
+}
 </style>
 </head>
 <body>
 
 	<footer>
 	<hr>
-		<p><b>고객센터</b></p>
+		<strong><p id="p3"><b>고객센터</b></p></strong>
 		<br>
-		<p>고객센터 Tel.02-123-4567</p>
-		<p>Company Address</p>
-		<p>서울특별시 마포구 서교동 447-5</p>
-		<p>대표: 홍길동</p>
+		<p id="p2">고객센터 Tel.02-123-4567</p>
+		<p id="p2">Company Address</p>
+		<p id="p2">서울특별시 마포구 서교동 447-5</p>
+		<p id="p2">대표: 홍길동</p>
 	</footer>
 	<hr>
 	<i><small><p id="inc">㈜ 2021 WeaterCloset, Inc. All rights reserved</p></small></i>

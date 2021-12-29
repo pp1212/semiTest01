@@ -48,15 +48,25 @@
 				
 			<div id="locAndFas"> <!--웨더랑 패션을 감싸는 div-->
 			
-					<h3 id="loc">[지역명]</h3> 
-					<a href="change_fashion.do">날씨에맞는 옷 보기</a>
+					<%
+						if(session.getAttribute("dong") == null){
+							%>
+								<h3 id="loc">[지역명]<img src="images/location.png" width="30" height="30"></h3> 
+							<%
+						}else{
+							%>
+								<h3 id="loc">${dong }<img src="images/location.png" width="30" height="30"></h3>
+							<%
+						}
+					%>
+					<!-- <a href="change_fashion.do">날씨에맞는 옷 보기</a> -->
 					<div class="main">
 						<div class="div1">
 						<h4 id="weather_title">- Weather -</h4>
 							<div id="box1">
-								<div id="temp">${dataValue_tmp }</div>
-								<div id="rain">${dataValue_pop }</div>
-								<div id="uv">${today_uv }</div>
+								<div id="temp" ><p id="p1">${dataValue_tmp }℃</p></div>
+								<div id="rain"><p id="p1">${dataValue_pop }%</p></div>
+								<div id="uv"><p id="p1">${today_uv }</p></div>
 							</div>
 						</div>
 					</div>	
@@ -66,12 +76,12 @@
 				<div class="main">
 					<div id="container">
 						<div class="div2">
-						<h4 id="fashion_title">- Fashion -</h4>
+						<a href="change_fashion.do"><h4 id="fashion_title">- Fashion -</h4></a>
 							<div id="box2">
-								<div id="top"><img src="images/${top_type }" width="250px" height="225px" id="pic" ></div>
-								<div id="bottom"><img src="images/${bottoms_type }" width="250px" height="225px" id="pic"></div>
-								<div id="outer"><img src="images/${outer_type }" width="250px" height="225px" id="pic"></div>
-								<div id="etc"><img src="images/${etc_type }" width="250px" height="225px" id="pic"></div>
+								<div id="top"><img src="images/${top_type }" width="240px" height="220px" id="pic" ></div>
+								<div id="bottom"><img src="images/${bottoms_type }" width="240px" height="220px" id="pic"></div>
+								<div id="outer"><img src="images/${outer_type }" width="240px" height="220px" id="pic"></div>
+								<div id="etc"><img src="images/${etc_type }" width="240px" height="220px" id="pic"></div>
 							</div>
 						</div>
 					</div>

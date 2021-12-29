@@ -13,7 +13,7 @@
 <body>
 	
 	<jsp:include page="header1.jsp" />
-	<hr>
+
 	<div id="container">
 		<form  class="box" id="phone" action="find_idOK.do" method="post">
 		<h1>《 아이디 찾기 》</h1>

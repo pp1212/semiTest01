@@ -56,7 +56,13 @@ footer{
 	margin-left: 100px;
 	margin-right: 0px;
 	margin-bottom: 5px;
-	border-radius: 1em;
+	border-radius: 20px;
+	font-size: 50px;
+ 	font-weight: bold;
+}
+#p1{
+	 text-align: center;
+	 margin-top: 40px;
 }
 #rain{
 	width: 500px;
@@ -65,7 +71,9 @@ footer{
 	border: solid 1px #000;
 	margin-right: 0px;
 	margin-bottom: 5px;
-	border-radius: 1em;
+	border-radius: 20px;
+	font-size: 50px;
+ 	font-weight: bold;
 }
 #uv{
 	width: 500px;
@@ -73,7 +81,9 @@ footer{
 	border: solid 1px #000;	
 	margin-left: 100px;
 	margin-right: 0px;
-	border-radius: 1em;
+	border-radius: 20px;
+	font-size: 50px;
+ 	font-weight: bold;
 }
 
 
@@ -138,8 +148,10 @@ footer{
 }
 
 a{
-	text-align: center;
+	margin-top: 100px;
+	margin-right: 100px;
+	text-align: right;
 }
 h3{
-	margin-right: 1610px;
+	margin-right: 800px;
 }
