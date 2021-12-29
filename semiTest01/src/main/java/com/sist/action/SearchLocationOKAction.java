@@ -28,7 +28,7 @@ public class SearchLocationOKAction implements SistAction {
 		
 		request.setAttribute("list", list);
 
-		return "searchLocationOK.jsp";
+		return "main.jsp";
 	}
 
 }

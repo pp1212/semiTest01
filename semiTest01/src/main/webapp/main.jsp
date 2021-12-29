@@ -10,97 +10,6 @@
 <link rel="stylesheet" href="css/main.css" type="text/css">
 
 <style type="text/css">
-#loc {
-	margin-top: 30px;
-	margin-left: 50px;	
-	float: left;
-	}
-	
-.main{
-	width: 1400px;
-	height: 460px;
-	}
-.div1{
-	width: 50%;
-	float: left;	
-	}
-#weather_title{
-	margin-bottom: 10px;
-	}
-#temp{
-	width: 500px;
-	height: 150px;
-	border: solid 1px #000;	
-	margin-left: 100px;
-	margin-bottom: 5px;
-}
-#rain{
-	width: 500px;
-	height: 150px;
-	border: solid 1px #000;	
-	margin-left: 100px;
-	margin-bottom: 5px;
-}
-#uv{
-	width: 500px;
-	height: 150px;
-	border: solid 1px #000;	
-	margin-left: 100px;
-
-}
-
-
-
-
-
-
-.main{
-	width: 1400px;
-	height: 460px;
-	}
-.div2{
-	width: 50%;
-	float: right;	
-	}
-#fashion_title{
-	margin-left: 100px;
-	margin-bottom: 10px;
-	}
-#box2{
-	display: flex;
-	flex-wrap: wrap;
-}
-
-#top{
-	width: 250px;
-	height: 225px;
-	border: solid 1px #000;	
-	margin-left: 100px;
-	margin-bottom: 10px;
-}
-#bottom{
-	width: 250px;
-	height: 225px;
-	border: solid 1px #000;	
-	margin-left: 10px;
-	margin-bottom: 10px;
-}
-
-#outer{
-	width: 250px;
-	height: 225px;
-	border: solid 1px #000;	
-	margin-left: 100px;
-	margin-bottom: 10px;
-}
-
-#etc{
-	width: 250px;
-	height: 225px;
-	border: solid 1px #000;	
-	margin-left: 10px;
-	margin-bottom: 10px;
-}
 
 
 </style>
@@ -136,39 +45,41 @@
 					</c:forEach>
 				</table>
 				
-				<h3 id="loc">[지역명]</h3> 
+				
+			<div id="locAndFas"> <!--웨더랑 패션을 감싸는 div-->
+			
+					<h3 id="loc">[지역명]</h3> 
 					<div class="main">
-							<div>
-								<section class="div1">
+						
+							<div id="container1">
+								<div class="div1">
 								<h4 id="weather_title">- Weather -</h4>
 									<div id="box1">
 										<div id="temp">${dataValue_tmp }</div>
 										<div id="rain">${dataValue_pop }</div>
 										<div id="uv">${today_uv }</div>
 									</div>
-								</section>
+								</div>
 							</div>
 					</div>	
 					
 					
 				<a href="change_fashion.do">날씨에맞는 옷 보기</a>
 				<div class="main">
-					<div>
-						<section class="div2">
+					<div id="container">
+						<div class="div2">
 						<h4 id="fashion_title">- Fashion -</h4>
 							<div id="box2">
-								<div id="top"><img src="images/${top_type }" width="250px" height="225px"></div>
-								<div id="bottom"><img src="images/${bottoms_type }" width="250px" height="225px"></div>
-								<div id="outer"><img src="images/${outer_type }" width="250px" height="225px"></div>
-								<div id="etc"><img src="images/${etc_type }" width="250px" height="225px"></div>
+								<div id="top"><img src="images/${top_type }" width="250px" height="225px" id="pic" ></div>
+								<div id="bottom"><img src="images/${bottoms_type }" width="250px" height="225px" id="pic"></div>
+								<div id="outer"><img src="images/${outer_type }" width="250px" height="225px" id="pic"></div>
+								<div id="etc"><img src="images/${etc_type }" width="250px" height="225px" id="pic"></div>
 							</div>
-						</section>
+						</div>
 					</div>
-				</div>	
-		
-				<%-- <jsp:include page="searchLocation.jsp"/>
-				<jsp:include page="change_weather.jsp"/>
-				<jsp:include page="change_fashion.jsp"/> --%>
+				</div>
+					
+			</div>
 			</div>
 		</div>
 		<div id="footer">

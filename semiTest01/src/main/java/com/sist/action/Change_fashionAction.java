@@ -56,51 +56,14 @@ public class Change_fashionAction implements SistAction {
 		System.out.println("자외선:"+uv);		
 		
 		
-		/*
-		if(Integer.parseInt(tmp) <= 11) {
+		if((Integer.parseInt(tmp)) <= 11 && (Integer.parseInt(tmp)) >=10) {
 			if((Integer.parseInt(pop)) == 0 ) {
 				if((Integer.parseInt(uv)) >= 7) {
 					fashion_no=19;
 				}else {
 					fashion_no=20;
 				}
-			}else if((Integer.parseInt(pop)) > 0  && (Integer.parseInt(pop)) < 20) {
-				
-			}else if() {
-				
-			}
-		}else if(Integer.parseInt(tmp) <= 9) {
-			if((Integer.parseInt(pop)) == 0 ) {
-				if((Integer.parseInt(uv)) >= 7) {
-					
-				}else {
-					
-				}
-			}else if((Integer.parseInt(pop)) > 0  && (Integer.parseInt(pop)) < 20){
-				
-			}
-		}else if(Integer.parseInt(tmp) <= 5) {
-			if((Integer.parseInt(pop)) == 0 ) {
-				if((Integer.parseInt(uv)) >= 7) {
-					
-				}else {
-					
-				}
-			}else if((Integer.parseInt(pop)) > 0  && (Integer.parseInt(pop)) < 20) {
-				
-			}
-		}
-		*/
-		
-		
-		if((Integer.parseInt(tmp)) <= 11 && (Integer.parseInt(tmp)) > 10) {
-			if((Integer.parseInt(pop)) == 0 ) {
-				if((Integer.parseInt(uv)) >= 7) {
-					fashion_no=19;
-				}else {
-					fashion_no=20;
-				}
-			}else if((Integer.parseInt(pop)) > 0  && (Integer.parseInt(pop)) < 20){
+			}else if((Integer.parseInt(pop)) > 0  && (Integer.parseInt(pop)) < 30){
 				fashion_no=20;
 			}else {
 				fashion_no=21;
@@ -113,7 +76,7 @@ public class Change_fashionAction implements SistAction {
 				}else {
 					fashion_no=23;
 				}
-			}else if((Integer.parseInt(pop)) > 0  && (Integer.parseInt(pop)) < 20){
+			}else if((Integer.parseInt(pop)) > 0  && (Integer.parseInt(pop)) < 30){
 				fashion_no=23;
 			}else {
 				fashion_no=24;
@@ -125,7 +88,7 @@ public class Change_fashionAction implements SistAction {
 				}else {
 					fashion_no=26;
 				}
-			}else if((Integer.parseInt(pop)) > 0  && (Integer.parseInt(pop)) < 20){
+			}else if((Integer.parseInt(pop)) > 0  && (Integer.parseInt(pop)) < 30){
 				fashion_no=26;
 			}else {
 				fashion_no=27;
