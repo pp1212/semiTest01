@@ -2,9 +2,9 @@
 	font-family: 'IBM Plex Sans KR', sans-serif;
 }
 
-#wrap{
+/* #wrap{
 	margin: 0 auto 0 auto
-}
+} */
 #locate{
 	text-align: center;
 }
@@ -21,5 +21,127 @@ footer{
 	font-size:10px;
 }
 
+<<<<<<< HEAD
+=======
+#menu li{
+	display: inline-block;
+	color: #000;
+	font-size: 0.9rem;
+	margin: 0px;
+	padding: 0px 30px;
+	float: right;
+}
+>>>>>>> branch 'master' of https://github.com/envayu/semiTest01.git
 
 
+
+#loc {
+	margin-top: 30px;
+	margin-left: 50px;	
+	float: left;
+	}
+	
+.div1{
+	/*width: 50%;*/
+	float: left;
+	display: inline-block;	
+	}
+#box1{
+	width: 600px;
+}
+#weather_title{
+	margin-bottom: 10px;
+	}
+#temp{
+	width: 500px;
+	height: 150px;
+	border: solid 1px #000;	
+	margin-left: 100px;
+	margin-right: 0px;
+	margin-bottom: 5px;
+	border-radius: 1em;
+}
+#rain{
+	width: 500px;
+	height: 150px;
+	border: solid 1px #000;	
+	margin-left: 100px;
+	margin-right: 0px;
+	margin-bottom: 5px;
+	border-radius: 1em;
+}
+#uv{
+	width: 500px;
+	height: 150px;
+	border: solid 1px #000;	
+	margin-left: 100px;
+	margin-right: 0px;
+	border-radius: 1em;
+}
+
+
+
+.div2{
+	width: 50%;
+	float: right;
+	display: inline-block;		
+	}
+#fashion_title{
+	margin-left: 100px;
+	margin-bottom: 10px;
+	}
+#box2{
+	display: flex;
+	flex-wrap: wrap;
+}
+
+#top{
+	width: 250px;
+	height: 225px;
+	border: solid 1px #000;	
+	margin-left: 100px;
+	margin-bottom: 10px;
+	border-radius: 1em;
+}
+#bottom{
+	width: 250px;
+	height: 225px;
+	border: solid 1px #000;	
+	margin-left: 10px;
+	margin-bottom: 10px;
+	border-radius: 1em;
+}
+
+#outer{
+	width: 250px;
+	height: 225px;
+	border: solid 1px #000;	
+	margin-left: 100px;
+	margin-bottom: 10px;
+	border-radius: 1em;
+}
+
+#etc{
+	width: 250px;
+	height: 225px;
+	border: solid 1px #000;	
+	margin-left: 10px;
+	margin-bottom: 10px;
+	border-radius: 1em;
+}
+
+#pic{
+	border-radius: 1em;	
+}
+
+#locAndFas{
+	width: 1760px;
+	display: inline-block;	
+}
+
+a{
+	text-align: center;
+}
+h3{
+	margin-right: 1610px;
+}
