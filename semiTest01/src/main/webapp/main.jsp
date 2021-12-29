@@ -1,11 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 <link rel="stylesheet" href="css/main.css" type="text/css">
+
 <style type="text/css">
 #loc {
 	margin-top: 30px;
@@ -101,6 +104,10 @@
 
 
 </style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@300&display=swap" rel="stylesheet">
+
 </head>
 <body>
 	<div id="wrap">
@@ -119,7 +126,16 @@
 		
 		<img class="image-thumbnail">
 			<div id="locate">
+
 			<jsp:include page="searchLocation.jsp"/>
+				<table class="table table-hover" style="width: 700px;text-align: center;margin-left: auto;margin-right: auto;">
+					<c:forEach var="l" items="${list }">
+					<tr>
+						<td><a href="searchXY.do?district=${l.district }&dong=${l.dong}">${l.province } ${l.district } ${l.dong }</a></td>
+					</tr>
+					</c:forEach>
+				</table>
+				
 				<h3 id="loc">[지역명]</h3> 
 					<div class="main">
 							<div>
