@@ -17,7 +17,7 @@ div.login_mypage{
 }
 
 #login{
-	padding-top: 150px;
+	padding-top: 100px;
 	text-align: center;
 }
 
@@ -31,6 +31,8 @@ div.login_mypage{
 	padding: 20px 20px;
 	margin-top: 5px;
 	margin-bottom: 5px;
+	font-size: 15px;
+	font-family: 'IBM Plex Sans KR', sans-serif;
 }
 
 .menu_button2{
@@ -83,3 +85,33 @@ input.menu_button2:hover{
 input.menu_button3:hover{
 	background-color: white;
 }
+
+.menu_mypage {
+    text-align: center;
+}
+#my_menu1 {
+    width: 80%;
+    height: 50px;
+    font-size: 1.0em;
+    cursor: pointer;
+    background-color: white;
+    border: none;
+    font-weight: bold;
+    padding: 6px;
+    border-radius: 10px;
+    color: skyblue;
+}
+#my_menu {
+    width: 80%;
+    height: 50px;
+    font-size: 1.0em;
+    cursor: pointer;
+    background-color: skyblue;
+    border: none;
+    font-weight: bold;
+    padding: 6px;
+    border-radius: 10px;
+    color: white;
+}
+
+
