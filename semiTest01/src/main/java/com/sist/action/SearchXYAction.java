@@ -28,6 +28,7 @@ public class SearchXYAction implements SistAction {
 		
 		String district = request.getParameter("district");
 		String dong = request.getParameter("dong");
+		session.setAttribute("dong", dong);
 		
 		LocationVO l = dao.searchXY(district, dong);
 		int x_coord = l.getX_coord();

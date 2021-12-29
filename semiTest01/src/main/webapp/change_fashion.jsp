@@ -7,6 +7,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style type="text/css">
+/*
 .main{
 	width: 1400px;
 	height: 460px;
@@ -54,12 +55,12 @@
 	margin-left: 10px;
 	margin-bottom: 10px;
 }
-
+*/
 </style>
 </head>
 <body>
 
-		<a href="change_fashion.do">날씨에맞는 옷 보기</a>
+	<%-- 	<a href="change_fashion.do">날씨에맞는 옷 보기</a>
 		<div class="main">
 			<div>
 				<section class="div2">
@@ -72,6 +73,6 @@
 					</div>
 				</section>
 			</div>
-		</div>	
+		</div>	 --%>
 </body>
 </html>
