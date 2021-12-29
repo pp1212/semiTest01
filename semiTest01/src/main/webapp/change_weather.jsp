@@ -9,7 +9,6 @@
 #loc {
 	margin-top: 30px;
 	margin-left: 50px;	
-	float: left;
 	}
 	
 .main{
@@ -21,12 +20,14 @@
 	float: left;	
 	}
 #weather_title{
+	margin-left: 100px;
 	margin-bottom: 10px;
 	}
 #temp{
 	width: 500px;
 	height: 150px;
 	border: solid 1px #000;	
+	border-radius: 1em;
 	margin-left: 100px;
 	margin-bottom: 5px;
 }
@@ -34,6 +35,7 @@
 	width: 500px;
 	height: 150px;
 	border: solid 1px #000;	
+	border-radius: 1em;
 	margin-left: 100px;
 	margin-bottom: 5px;
 }
@@ -41,16 +43,25 @@
 	width: 500px;
 	height: 150px;
 	border: solid 1px #000;	
+	border-radius: 1em;
 	margin-left: 100px;
-
 }
 
 </style>
 </head>
 <body>
 
-
-	<h3 id="loc">[지역명]</h3> 
+	<%
+		if(session.getAttribute("dong") == null){
+			%>
+				<h3 id="loc">[지역명]<img src="images/location.png" width="30" height="30"></h3> 
+			<%
+		}else{
+			%>
+				<h3 id="loc">${dong }<img src="images/location.png" width="30" height="30"></h3>
+			<%
+		}
+	%>
 		<div class="main">
 				<div>
 					<section class="div1">
