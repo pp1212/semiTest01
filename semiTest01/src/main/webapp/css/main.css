@@ -2,12 +2,12 @@
 	font-family: 'IBM Plex Sans KR', sans-serif;
 }
 
-/* #wrap{
+#wrap{
 	margin: 0 auto 0 auto
-} */
+}
 #locate{
 	text-align: center;
-}
+} 
 
 .image-thumbnail {
     width: 100%;
@@ -21,8 +21,6 @@ footer{
 	font-size:10px;
 }
 
-<<<<<<< HEAD
-=======
 #menu li{
 	display: inline-block;
 	color: #000;
@@ -31,9 +29,6 @@ footer{
 	padding: 0px 30px;
 	float: right;
 }
->>>>>>> branch 'master' of https://github.com/envayu/semiTest01.git
-
-
 
 #loc {
 	margin-top: 30px;
