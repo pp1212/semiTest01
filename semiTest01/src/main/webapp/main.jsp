@@ -45,7 +45,7 @@
 					</c:forEach>
 				</table>
 				
-				
+				 
 			<div id="locAndFas"> <!--웨더랑 패션을 감싸는 div-->
 			
 					<%

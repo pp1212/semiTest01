@@ -17,7 +17,7 @@ a{
 </style>
 </head>
 <body>
-	<div>
+	<div> 
 		<a href="main.jsp"><img src="images/wathercloset_logo.jpg"></a>
 	<ul id="menu">
 		<li><a href="listQnA.do">Help</a></li>

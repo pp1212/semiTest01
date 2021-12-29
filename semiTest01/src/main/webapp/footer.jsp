@@ -14,7 +14,7 @@
 	font-family: 'IBM Plex Sans KR', sans-serif;
 	font-size: 15px;
 }
-#p3{
+#p3{ 
 	font-family: 'IBM Plex Sans KR', sans-serif;
 	font-size: 25px;
 }

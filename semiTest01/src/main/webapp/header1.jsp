@@ -15,7 +15,7 @@ a{
 	font-size: 25px;
 }
 </style>
-</head>
+</head> 
 <body>
 	<div>
 		<a href="main.jsp"><img src="images/wathercloset_logo.jpg"></a>
