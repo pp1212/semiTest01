@@ -12,7 +12,6 @@
 <style type="text/css">
 a{
 	font-family: 'IBM Plex Sans KR', sans-serif;
-	font-size: 25px;
 }
 </style>
 </head>
