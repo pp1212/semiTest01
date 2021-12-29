@@ -5,7 +5,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>나의 문의내역</title>
+<link rel="stylesheet" href="css/mypage_qna.css" type="text/css">
 </head>
 <script type="text/javascript">
 	function checkKeyword(){
@@ -20,46 +21,67 @@
 	}
 </script>
 <body>
-	<h2>나의 문의내역</h2>	
-	<form name="keywordForm" action="listQnA_mypage.do?cust_id=${now_id }" method="post">
-		<select name="searchColum">
-			<option name="q_title" value="qna_title">제목</option>
-		</select>
-	    <input type="search" name="keyword">
-		<input type="submit" value="검색" onclick="checkKeyword()">
-	</form>
+	<h2>MyPage</h2>
+	<hr>
+	<div>
+		<div class="menu_mypage">
+			<form action="mypageMain.jsp" method="post">
+				<input type="hidden" name="cust_id" value="${now_id }">
+				<input class="menu_button1" id="1" type="submit" value="회원정보 관리">
+			</form>
+			<form action="listQnA_mypage.do" method="post">
+				<input type="hidden" name="cust_id" value="${now_id }">
+				<input class="menu_button2" type="submit" value="나의게시물 관리">
+			</form>
+			<form action="showLoc.jsp" method="post">
+				<input class="menu_button3" type="submit" value="관심지역 관리">
+			</form>
+		</div>
 	
-	<table border="1" width="80%">
-		<tr>
-			<th>번호</th>
-			<th>제목</th>
-			<th>아이디</th>
-			<th>날짜</th>
-			<th>조회</th>
-			
-		</tr>
+	
+		<div class="listQnA_mypage">
+			<form id="search" name="keywordForm" action="listQnA_mypage.do?cust_id=${now_id }" method="post">
+				<h3>나의 문의내역</h3>
+				<hr>
+				<select name="searchColum">
+					<option name="q_title" value="qna_title">제목</option>
+				</select>
+			    <input type="search" name="keyword">
+				<input type="submit" value="검색" onclick="checkKeyword()">
+			</form>
 		
-		<c:forEach var="b" items="${list}">
-			<tr>
-				<td>${b.qna_no }</td>
-				<td>
+		
+			<table id="table" border="1" width="80%">
+				<tr>
+					<th>번호</th>
+					<th>제목</th>
+					<th>아이디</th>
+					<th>날짜</th>
+					<th>조회</th>
 					
-					<a href="showContent_mypage.do?qna_no=${b.qna_no }">${b.qna_title }</a>
-				</td>
-				<td>${b.cust_id }</td>
-				<td>${b.qna_date }</td>
-				<td>${b.qna_hits }</td>
-			</tr>
-		</c:forEach>
-	</table>
-	<br>
-	<br>
-	<c:forEach var="i" begin="1" end="${totalPage }">
-		<a href="listQnA_mypage.do?pageNUM=${i }">${i }</a>&nbsp;&nbsp;
-	</c:forEach>
-	
-
-	
+				</tr>
+				
+				<c:forEach var="b" items="${list}">
+					<tr>
+						<td>${b.qna_no }</td>
+						<td>
+							
+							<a href="showContent_mypage.do?qna_no=${b.qna_no }">${b.qna_title }</a>
+						</td>
+						<td>${b.cust_id }</td>
+						<td>${b.qna_date }</td>
+						<td>${b.qna_hits }</td>
+					</tr>
+				</c:forEach>
+			</table>
+					
+			<br>
+			<br>
+			<c:forEach var="i" begin="1" end="${totalPage }">
+				<a href="listQnA_mypage.do?pageNUM=${i }">${i }</a>&nbsp;&nbsp;
+			</c:forEach>
+		</div>
+	</div>
 </body>
 </html>
 

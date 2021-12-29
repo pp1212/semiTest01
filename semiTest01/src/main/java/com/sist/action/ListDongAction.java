@@ -24,8 +24,6 @@ public class ListDongAction implements SistAction {
 		ArrayList<String> list = dao.getDong2(province, district);
 		request.setAttribute("list", list); 
 		
-		System.out.println(list);
-		
 		return "listDong.jsp";
 	}
 
