@@ -40,7 +40,7 @@
 			<form name="keywordForm" action="listQnA.do" method="post">
 				<select name="searchColum">
 					<option name="q_title" value="qna_title">제목</option>
-					<option name="q_custid" value="cust_id">아이디</option>			
+					<option name="q_custid" value="cust_id" >아이디</option>			
 				</select>
 			    <input type="search" name="keyword">
 				<input type="submit" value="검색" onclick="checkKeyword()">

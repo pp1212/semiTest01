@@ -53,10 +53,10 @@
 	<hr>
 	<form name="insertForm" action="insertQnAOK.do" method="post">
 		<input type="hidden" name="no" value="${no}">
-		제목 : <input type="text" name="qna_title" placeholder="필수 사항입니다"><br>
-		아이디 :<input type="text" name="cust_id" value="${now_id}"> <br>
+		제목 : <input type="text" name="qna_title" placeholder="필수 사항입니다" id=sub><br>
+		아이디 :<input type="text" name="cust_id" value="${now_id}" id=sub> <br>
 		문의내용 : <br>
-		<textarea rows="10" cols="80" name="qna_content" placeholder="필수 사항입니다"></textarea><br>
+		<textarea rows="10" cols="80" name="qna_content" placeholder="필수 사항입니다" id=sub></textarea><br>
 		<input type="button" value="등록" onclick="checkContent()">
 		<input id="re_button" type="button" value="취소" onclick="checkReject()">
 </div>	
