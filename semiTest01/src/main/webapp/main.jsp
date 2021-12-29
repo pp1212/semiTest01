@@ -49,22 +49,20 @@
 			<div id="locAndFas"> <!--웨더랑 패션을 감싸는 div-->
 			
 					<h3 id="loc">[지역명]</h3> 
+					<a href="change_fashion.do">날씨에맞는 옷 보기</a>
 					<div class="main">
-						
-							<div id="container1">
-								<div class="div1">
-								<h4 id="weather_title">- Weather -</h4>
-									<div id="box1">
-										<div id="temp">${dataValue_tmp }</div>
-										<div id="rain">${dataValue_pop }</div>
-										<div id="uv">${today_uv }</div>
-									</div>
-								</div>
+						<div class="div1">
+						<h4 id="weather_title">- Weather -</h4>
+							<div id="box1">
+								<div id="temp">${dataValue_tmp }</div>
+								<div id="rain">${dataValue_pop }</div>
+								<div id="uv">${today_uv }</div>
 							</div>
+						</div>
 					</div>	
 					
 					
-				<a href="change_fashion.do">날씨에맞는 옷 보기</a>
+				
 				<div class="main">
 					<div id="container">
 						<div class="div2">
