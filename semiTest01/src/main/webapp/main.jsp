@@ -75,9 +75,9 @@
 				
 				<div class="main">
 					<div id="container">
+					<a href="change_fashion.do"><h4 id="fashion_title">- Fashion -</h4></a>
 						<div class="div2">
-						<a href="change_fashion.do"><h4 id="fashion_title">- Fashion -</h4></a>
-							<div id="box2">
+							<div id="box2">								
 								<div id="top"><img src="images/${top_type }" width="240px" height="220px" id="pic" ></div>
 								<div id="bottom"><img src="images/${bottoms_type }" width="240px" height="220px" id="pic"></div>
 								<div id="outer"><img src="images/${outer_type }" width="240px" height="220px" id="pic"></div>

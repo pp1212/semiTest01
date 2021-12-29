@@ -17,7 +17,7 @@
 	margin: 0;
 }
 
-footer{ 
+footer{
 	font-size:10px;
 }
 
@@ -91,16 +91,26 @@ footer{
 .div2{
 	width: 50%;
 	float: right;
-	display: inline-block;		
+	display: inline-block;	
+	margin-top: 0px;	
 	}
-#fashion_title{
-	margin-left: 100px;
+#fashion_title{	
 	margin-bottom: 10px;
+	margin-left: 1000px;
 	text-align: left;
+	margin-top: 30px;
+	width: 300*300px;
+	margin-top: 50px;
 	}
+	
+#container{
+	margin-bottom: 10px;
+	height: 30px;
+}
 #box2{
 	display: flex;
 	flex-wrap: wrap;
+	margin-top: 0px;
 }
 
 #top{
@@ -110,6 +120,7 @@ footer{
 	margin-left: 100px;
 	margin-bottom: 10px;
 	border-radius: 1em;
+	margin-top: 0px;
 }
 #bottom{
 	width: 250px;
@@ -118,6 +129,7 @@ footer{
 	margin-left: 10px;
 	margin-bottom: 10px;
 	border-radius: 1em;
+	margin-top: 0px;
 }
 
 #outer{
@@ -153,5 +165,5 @@ a{
 	text-align: right;
 }
 h3{
-	margin-right: 800px;
+	margin-right: 750px;
 }
