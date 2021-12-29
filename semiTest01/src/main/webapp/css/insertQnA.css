@@ -1,0 +1,18 @@
+@charset "UTF-8";
+#QnAinsert{
+	text-align: center;
+}
+
+*{
+	font-family: 'IBM Plex Sans KR', sans-serif;
+	font-size:16px;
+}
+
+#menu li{
+	display: inline-block;
+	float: right;
+}
+
+#menu li a{
+	text-decoration: none;
+}
