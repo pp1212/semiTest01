@@ -4,8 +4,10 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>회원 정보 수정</title>
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+<link rel="stylesheet" href="css/mypage_cust_update.css" type="text/css">
+
 <script type="text/javascript">
 	function checkForm() {
 		var regExpPwd = /^[0-9a-zA-Z]{8,20}$/;
@@ -65,68 +67,89 @@
 </script>
 </head>
 <body>
-	<h2>고객 정보 수정</h2>
+	<h2>MyPage</h2>
 	<hr>
-	<form action="update_custOK.do" method="post" name="loginForm">
-		<input type="hidden" name="cust_id" value="${c.cust_id }"><br>
-		<table>
-			<tr>
-				<td id="title">이름</td>
-				<td>
-					<input type="text" name="cust_name" value="${c.cust_name }">
-				</td>
-			</tr>
-			<tr>
-				<td id="title">비밀번호</td>
-				<td>
-					<input type="password" name="cust_pwd"> *숫자,영문 조합 8자 이상
-				</td>
-			</tr>
-			<tr>
-				<td id="title">비밀번호 확인</td>
-				<td>
-					<input type="password" name="cust_pwdCheck">
-				</td>
-			</tr>
-			
-			<tr>
-				<td id="title">성별</td>
-				<td>
-					<input type="radio" name="gender_code" value="1" checked="checked">남성	
-					<input type="radio" name="gender_code" value="2">여성
+	<div>
+		<div class="menu_mypage">
+			<form action="mypageMain.jsp" method="post">
+				<input type="hidden" name="cust_id" value="${now_id }">
+				<input class="menu_button1" id="1" type="submit" value="회원정보 관리">
+			</form>
+			<form action="listQnA_mypage.do" method="post">
+				<input type="hidden" name="cust_id" value="${now_id }">
+				<input class="menu_button2" type="submit" value="나의게시물 관리">
+			</form>
+			<form action="showLoc.jsp" method="post">
+				<input class="menu_button3" type="submit" value="관심지역 관리">
+			</form>
+		</div>
+		
+		<div class="login_mypage">
+			<form id="login" action="update_custOK.do" method="post" name="loginForm">
+				<h3>회원 정보 수정</h3>
+				<hr>
+				<input type="hidden" name="cust_id" value="${c.cust_id }"><br>
+				<table>
+					<tr>
+						<td id="title">이름</td>
+						<td>
+							<input type="text" name="cust_name" value="${c.cust_name }">
+						</td>
+					</tr>
+					<tr>
+						<td id="title">비밀번호</td>
+						<td>
+							<input type="password" name="cust_pwd"> *숫자,영문 조합 8자 이상
+						</td>
+					</tr>
+					<tr>
+						<td id="title">비밀번호 확인</td>
+						<td>
+							<input type="password" name="cust_pwdCheck">
+						</td>
+					</tr>
 					
-				</td>
-			</tr>
-			<tr>
-				<td id="title">휴대전화</td>
-				<td>
-					<input type="tel" name="cust_phone" value="${c.cust_phone }">
-				</td>
-			</tr>
-			<tr>
-				<td id="title">이메일</td>
-				<td>
-					<input type="email" name="cust_email" value="${c.cust_email }">
-				</td>
-			</tr>
-			<tr>
-	            <td id="title" width="200">우편번호</td>
-	            <td>
-	            	<input type="text" name="zipcode" id="zipcode" size="7" readonly="readonly"> 
-	                <input type="button" value="우편번호찾기" onclick="kakaopost()">
-	            </td>
-	        </tr>
-			<tr>
-				<td id="title">주소</td>
-				<td>
-					<input type="text" name="cust_addr" id="address" size="70" readonly="readonly" value="${c.cust_addr }">
-				</td>
-			</tr>
-		</table>
-		<br>
-		<input type="button" value="수정" onclick="checkForm()">
-		<input type="reset" value="취소">
-	</form>
+					<tr>
+						<td id="title">성별</td>
+						<td>
+							<input type="radio" name="gender_code" value="1" checked="checked">남성	
+							<input type="radio" name="gender_code" value="2">여성
+							
+						</td>
+					</tr>
+					<tr>
+						<td id="title">휴대전화</td>
+						<td>
+							<input type="tel" name="cust_phone" value="${c.cust_phone }">
+						</td>
+					</tr>
+					<tr>
+						<td id="title">이메일</td>
+						<td>
+							<input type="email" name="cust_email" value="${c.cust_email }">
+						</td>
+					</tr>
+					<tr>
+			            <td id="title" width="200">우편번호</td>
+			            <td>
+			            	<input type="text" name="zipcode" id="zipcode" size="7" readonly="readonly"> 
+			                <input type="button" value="우편번호찾기" onclick="kakaopost()">
+			            </td>
+			        </tr>
+					<tr>
+						<td id="title">주소</td>
+						<td>
+							<input type="text" name="cust_addr" id="address" size="70" readonly="readonly" value="${c.cust_addr }">
+						</td>
+					</tr>
+				</table>
+				<br>
+				<input type="button" value="수정" onclick="checkForm()">
+				<input type="reset" value="취소">
+			</form>
+		</div>
+	</div>
+	
 </body>
 </html>
 

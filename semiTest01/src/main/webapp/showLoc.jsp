@@ -5,15 +5,21 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>관심 지역 관리</title>
+<link rel="stylesheet" href="css/mypage_loc.css" type="text/css">
 <style type="text/css">
 	#district{	
+		display: none;
+	}
+	#dong{	
 		display: none;
 	}
 </style>
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript">
 	$(function(){
+		var province;
+		var district;
 		$.ajax({url:"listProvince.do",success:function(data){
 			$.each(data, function(index,item){
 				var a = $("<option></option>").html(item)
@@ -22,44 +28,67 @@
 		}});
 		
 		$("#province").change(function(){
-			var province = $(this).val();
+		 province = $(this).val();
 			$("#district").css("display","inline")
-			$.ajax({url:"listDistrict.do?province="+province,success:function(data){
-				$.each(data, function(index,item){
-					var a = $("<option></option>").html(item)
-					$("#district").append(a);
+			$.ajax({
+				url:"listDistrict.do?province="+province,
+						success:function(data){
+							$.each(data, function(index,item){
+								var a = $("<option></option>").html(item)
+								$("#district").append(a);
 				});
 			}});
 			
 		});
+	
 		
 		$("#district").change(function(){
-			var province = $(this).val();
+			district = $(this).val();
 			$("#dong").css("display","inline")
-			$.ajax({url:"listDong.do?district="+district"&&province="+province,success:function(data){
-				$.each(data, function(index,item){
-					var a = $("<option></option>").html(item)
-					$("#dong").append(a);
-				});
-			}});
-			
-		}); 
-		
+			$.ajax({
+				url:"listDong.do?province="+province+"&district="+district,
+						success:function(data){
+							$.each(data, function(index,item){
+								var a = $("<option></option>").html(item)
+								$("#dong").append(a);
+					});
+				}
+			})
+		});
+	
 	});
 </script>
 </head>
 <body>
-
-	<form name="showLocForm" method="POST" action="showLocOK.do">      
-        <select name="province" id="province">
-        </select>
-        <select name="district" id="district"> 
-        </select>
-        <select name="dong" id="dong">
-        </select>
-        <input type="submit" value="선택">
-    </form>
-	
+	<h2>MyPage</h2>
+	<hr>
+	<div>
+		<div class="menu_mypage">
+			<form action="mypageMain.jsp" method="post">
+				<input type="hidden" name="cust_id" value="${now_id }">
+				<input class="menu_button1" id="1" type="submit" value="회원정보 관리">
+			</form>
+			<form action="listQnA_mypage.do" method="post">
+				<input type="hidden" name="cust_id" value="${now_id }">
+				<input class="menu_button2" type="submit" value="나의게시물 관리">
+			</form>
+			<form action="showLoc.jsp" method="post">
+				<input class="menu_button3" type="submit" value="관심지역 관리">
+			</form>
+		</div>
+		
+		<div class="loc_mypage">
+			<form id="loc" name="showLocForm" method="POST" action="showLocOK.do">      
+		        <select name="province" id="province">
+		        </select>
+		        <select name="district" id="district"> 
+		        </select>
+		        <select name="dong" id="dong">
+		        </select>
+		        <input type="submit" value="선택">
+		    </form>
+		</div>    
+	</div>
 </body>
 </html>
 

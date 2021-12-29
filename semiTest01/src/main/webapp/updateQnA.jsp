@@ -4,7 +4,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>나의 문의내용 수정</title>
+<link rel="stylesheet" href="css/mypage_qna.css" type="text/css">
 </head>
 <script type="text/javascript">
 function checkContent(){
@@ -33,19 +34,38 @@ function checkReject(){
 
 </script>
 <body>
-	<h2>나의 문의내용 수정</h2>
+	<h2>MyPage</h2>
 	<hr>
-	<form name="updateForm" action="updateQnAOK.do" method="post">
-		<input type="hidden" name="qna_no" value="${b.qna_no }">
-		제목 : <input type="text" name="qna_title" value="${b.qna_title }"><br>
-		아이디 : <input type="text" name="cust_id" value="${b.cust_id }"><br>
-		문의내용<br>
-			<textarea rows="10" cols="80" name="qna_content">${b.qna_content }</textarea><br>	
-		<hr>
-		<a href="deleteQnA.do?qna_no=${b.qna_no }"><p onclick="alert('삭제하시겠습니까?')">삭제</p></a>
-		<input type="button" value="등록" onclick="checkContent()">
-		<input id="re_button" type="button" value="취소" onclick="checkReject()">
-	</form>
-	
+	<div>
+		<div class="menu_mypage">
+			<form action="mypageMain.jsp" method="post">
+				<input type="hidden" name="cust_id" value="${now_id }">
+				<input class="menu_button1" id="1" type="submit" value="회원정보 관리">
+			</form>
+			<form action="listQnA_mypage.do" method="post">
+				<input type="hidden" name="cust_id" value="${now_id }">
+				<input class="menu_button2" type="submit" value="나의게시물 관리">
+			</form>
+			<form action="showLoc.jsp" method="post">
+				<input class="menu_button3" type="submit" value="관심지역 관리">
+			</form>
+		</div>
+		
+		<div class="update_mypage">
+			<h3>나의 문의내용 수정</h3>
+			<hr>
+			<form name="updateForm" action="updateQnAOK.do" method="post">
+				<input type="hidden" name="qna_no" value="${b.qna_no }">
+				제목 : <input type="text" name="qna_title" value="${b.qna_title }"><br>
+				아이디 : <input type="text" name="cust_id" value="${b.cust_id }"><br>
+				문의내용<br>
+					<textarea rows="10" cols="80" name="qna_content">${b.qna_content }</textarea><br>	
+				<hr>
+				<a href="deleteQnA.do?qna_no=${b.qna_no }"><p onclick="alert('삭제하시겠습니까?')">삭제</p></a>
+				<input type="button" value="등록" onclick="checkContent()">
+				<input id="re_button" type="button" value="취소" onclick="checkReject()">
+			</form>
+		</div>
+	</div>
 </body>
 </html>
