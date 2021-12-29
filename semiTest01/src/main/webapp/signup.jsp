@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -121,17 +123,30 @@
 					<input class="register-input" id="user-name" type="text" placeholder="이름 입력" name="cust_name">
 				</div>
 				
-				<strong class="register-tf">성별</strong>
-				<div class="register-subtitle" style="margin-top: 10px;">
-					<label for="user-male" class="register-lab">남
-						<input class="register-input gender" type="radio" id="user-male" name="gender_code" value="1" checked="checked"
-							style="width: 15px;height: 15px;">
-					</label>
-					<label for="user-female" class="register-lab">여
-						<input class="register-input gender" type="radio" id="user-female" name="gender_code" value="2"
-							style="width: 15px;height: 15px;">
-					</label>
-				</div>
+				  <strong class="register-tf">성별</strong>
+                <div class="register-subtitle" style="margin-top: 10px;">
+         			<c:if test= "${gender=='male'}">
+                   <label for="user-male" class="register-lab">남
+                        <input class="register-input gender" type="radio" id="user-male" name="gender_code" value="1" checked="checked"
+                           style="width: 15px;height: 15px;">
+                    </label>
+                    <label for="user-female" class="register-lab">여
+                         <input class="register-input gender" type="radio" id="user-female" name="gender_code" value="2"
+                            style="width: 15px;height: 15px;">
+                     </label>
+                    </c:if>
+                    <c:if test= "${gender=='female' || gender==''}">
+                   <label for="user-male" class="register-lab">남
+                        <input class="register-input gender" type="radio" id="user-male" name="gender_code" value="1"
+                           style="width: 15px;height: 15px;">
+                    </label>
+                    <label for="user-female" class="register-lab">여
+                         <input class="register-input gender" type="radio" id="user-female" name="gender_code" value="2"  checked="checked"
+                            style="width: 15px;height: 15px;">
+                     </label>
+                    </c:if>
+                 </div>
+				
 				
 				<strong class="register-tf">전화번호</strong>
 				<div class="register-subtitle">
@@ -142,7 +157,7 @@
 				<strong class="register-tf">이메일</strong>
 				<div class="register-subtitle">
 					<label for="user-email" class="register-lab"></label>
-					<input class="register-input" type="email" id="user-email" placeholder="이메일 입력" name="cust_email" >
+					<input class="register-input" type="email" id="user-email" placeholder="이메일 입력" name="cust_email" value="${email}"> 
 				</div>
 				
 				<strong class="register-tf">주소</strong>
