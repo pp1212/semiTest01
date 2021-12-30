@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 @charset "UTF-8";
-div{
+div.mypage{
 	width: 1000px;
     height: 500px;
 }
@@ -23,9 +23,8 @@ div.loc_mypage{
 	text-align: left;
 }
 
-#loc{
-	padding-top: 30px;
-	padding-left: 20px;
+#loc2{
+	padding-top: 0px;
 	text-align: left;
 }
 
@@ -88,3 +87,35 @@ input.menu_button1:hover{
 input.menu_button2:hover{
 	background-color: white;
 }
+
+.menu_mypage {
+    text-align: center;
+}
+
+#my_menu1 {
+    width: 80%;
+    height: 50px;
+    font-size: 1.0em;
+    cursor: pointer;
+    background-color: white;
+    border: none;
+    font-weight: bold;
+    padding: 6px;
+    border-radius: 10px;
+    color: skyblue;
+}
+
+#my_menu {
+    width: 80%;
+    height: 50px;
+    font-size: 1.0em;
+    cursor: pointer;
+    background-color: skyblue;
+    border: none;
+    font-weight: bold;
+    padding: 6px;
+    border-radius: 10px;
+    color: white;
+}
+
+

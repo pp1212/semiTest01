@@ -1,6 +1,6 @@
-div{
+div.mypage{
 	width: 1000px;
-    height: 1000px;
+    height: 500px;
 }
 
 div.menu_mypage{
@@ -16,7 +16,7 @@ div.login_mypage{
 }
 
 #login{
-	padding-top: 20px;
+	padding-top: 0px;
 }
 
 .menu_button1{
@@ -83,3 +83,51 @@ input.menu_button3:hover{
 	padding-top: 100px;
 	text-align: center;
 }
+
+
+.register-submit {
+    text-align: center;
+}
+
+#submit_all {
+    width: 15%;
+    height: 35px;
+    font-size: 1.0em;
+    cursor: pointer;
+    background-color: #aaaaaa;
+    border: none;
+    font-weight: bold;
+    padding: 6px;
+    border-radius: 10px;
+    color: white;
+}
+
+.menu_mypage {
+    text-align: center;
+}
+#my_menu1 {
+    width: 80%;
+    height: 50px;
+    font-size: 1.0em;
+    cursor: pointer;
+    background-color: white;
+    border: none;
+    font-weight: bold;
+    padding: 6px;
+    border-radius: 10px;
+    color: skyblue;
+}
+#my_menu {
+    width: 80%;
+    height: 50px;
+    font-size: 1.0em;
+    cursor: pointer;
+    background-color: skyblue;
+    border: none;
+    font-weight: bold;
+    padding: 6px;
+    border-radius: 10px;
+    color: white;
+}
+
+

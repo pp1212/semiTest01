@@ -12,16 +12,17 @@
 <style type="text/css">
 a{
 	font-family: 'IBM Plex Sans KR', sans-serif;
+	text-decoration:none;
+
 }
 </style>
 </head> 
 <body>
-	<div>
-		<a href="main.jsp"><img src="images/wathercloset_logo.jpg"></a>
-		
-		<ul id="menu">
-		<li><a href="login.do">Login</a></li>
-		</ul>
+	<ul id="menu">
+			<li><a style="padding: 0px 10px;" href="login.do">Login</a></li>
+	</ul>
+	<div style="padding: 20px 20px;">
+		<a href="main.jsp"><img src="images/wathercloset_logo.jpg"></a>		
 	</div>
 </body>
 </html>

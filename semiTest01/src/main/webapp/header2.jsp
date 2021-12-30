@@ -13,16 +13,21 @@
 a{
 	font-family: 'IBM Plex Sans KR', sans-serif;
 }
+
+#menu li a{
+	text-decoration:none; 
+}
 </style>
 </head>
 <body>
-	<div> 
-		<a href="main.jsp"><img src="images/wathercloset_logo.jpg"></a>
 	<ul id="menu">
-		<li><a href="listQnA.do">Help</a></li>
-		<li><a href="mypageMain.jsp">Mypage</a></li>
-		<li><a href="logout.do">Logout</a></li>
+			<li><a href="listQnA.do">Help</a></li>
+			<li><a href="mypageMain.jsp">Mypage</a></li>
+			<li><a href="logout.do">Logout</a></li>
 	</ul>
+	<div style="padding: 20px 20px;"> 
+		<a href="main.jsp"><img src="images/wathercloset_logo.jpg"></a>
+		
 	</div>
 </body>
 </html>

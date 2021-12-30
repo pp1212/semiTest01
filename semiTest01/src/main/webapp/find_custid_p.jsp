@@ -5,12 +5,16 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap');
-H4{
-font-family: 'Do Hyeon', sans-serif;
-font-size: 40px;
-margin-left: 20px;
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@300&display=swap" rel="stylesheet">
+<style type="text/css">
+*{
+font-family: 'IBM Plex Sans KR', sans-serif;
+}
+#qq{
+	font-size: 20px;
+	text-align: center;
 }
 </style>
 </head>
@@ -19,7 +23,7 @@ margin-left: 20px;
 	<hr>
 	<br>
 	<br>
-	<h4>고객님의 아이디는 ${cust_id_p } 입니다.</h4>
+	<h4 id="qq">고객님의 아이디는 ${cust_id_p } 입니다.</h4>
 	<br>
 	<br>
 	<jsp:include page="footer.jsp"/>
