@@ -35,5 +35,8 @@
 	<div id="menu">
 		<li><a href="listQnA.do">목록</a></li>
 	</div>
+	<div id="footer">
+		<jsp:include page="footer.jsp"/>
+		</div>
 </body>
 </html>
