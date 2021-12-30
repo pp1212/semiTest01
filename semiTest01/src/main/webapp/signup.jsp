@@ -135,7 +135,7 @@
                             style="width: 15px;height: 15px;">
                      </label>
                     </c:if>
-                    <c:if test= "${gender=='female' || gender==''}">
+                    <c:if test= "${gender=='female'}">
                    <label for="user-male" class="register-lab">남
                         <input class="register-input gender" type="radio" id="user-male" name="gender_code" value="1"
                            style="width: 15px;height: 15px;">

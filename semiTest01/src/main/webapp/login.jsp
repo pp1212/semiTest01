@@ -72,7 +72,7 @@
 				}
 			</script>
 			<div class="register-submit">
-				<button id="move-page" onclick="location.href='signup.jsp'">회원가입</button>
+				<button id="move-page" onclick="location.href='signup.do'">회원가입</button>
 			</div>
 		</div>
 		</div>
