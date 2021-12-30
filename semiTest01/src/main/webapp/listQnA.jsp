@@ -82,5 +82,8 @@
 	<div id="menu">
 	<li><a href="insertQnA.do">글쓰기</a></li>
 	</div>
+	<div id="footer">
+		<jsp:include page="footer.jsp"/>
+		</div>
 </body>
 </html>

@@ -61,5 +61,8 @@
 		<input id="re_button" type="button" value="취소" onclick="checkReject()">
 </div>	
 	</form>
+	<div id="footer">
+		<jsp:include page="footer.jsp"/>
+		</div>
 </body>
 </html>
