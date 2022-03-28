@@ -24,4 +24,4 @@
 4. 지역 검색
 5. 기상청 API - 기온, 강수확률, 자외선 지수 
 <br>
-https://user-images.githubusercontent.com/91641653/160429801-2fddc97b-88c5-46c6-b629-a98ea1f7b3f4.mp4
+영상시연 : https://user-images.githubusercontent.com/91641653/160429801-2fddc97b-88c5-46c6-b629-a98ea1f7b3f4.mp4
