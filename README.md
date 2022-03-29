@@ -16,7 +16,8 @@
 <br>
 
 ## ERD
-
+![ERD-physical](https://user-images.githubusercontent.com/91641653/160619866-c3689c9e-bdcc-4342-809c-2b7593af47b8.png)
+<br>
 
 ## 담당 구현 파트
 ### 박지예
